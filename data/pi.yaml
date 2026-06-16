@@ -1,0 +1,58 @@
+name: "徐敏"
+title: "博士 | 教授 | 博士生导师"
+social_jobs: "中国认知科学学会社会认知科学分会理事 | 广东认知科学学会理事"
+photo: "/images/hero-pi.jpg" 
+bio: "2009年6月于中山大学获心理学学士学位，2014年12月于香港大学语言学系获博士学位，读博期间前往麻省理工学院访问学习。致力于研究语言和语言障碍的认知神经机制，相关研究成果以第一或通讯作者（包括并列）发表在Science Advances、Nature Human Behaviour、PNAS、Communications Biology、Developmental Science、Neuroimage等国际高水平期刊。主持国家自然科学基金面上、青年项目，深圳市优秀青年项目等。入选深圳市海外高层次人才。"
+
+# 研究方向
+research_interests:
+  - "语言脑机制"
+  - "语言发展"
+  - "阅读障碍"
+
+# 荣誉奖励
+honors:
+  - "第五届瀚翔青年奖，第九届全国脑电与脑成像学术年会组委会 (2022)"
+  - "深圳大学荔园优青，深圳大学 (2019/2022)"
+
+# 学习及工作经历
+education_and_work_experience:
+  - year: "2005/09-2009/06"
+    school_major: "中山大学心理学系"
+    detail: "学士"
+
+  - year: "2010/01-2014/12"
+    school_major: "香港大学语言学系"
+    detail: "博士"
+
+  - year: "2015/05-2019/12"
+    school_major: "深圳大学脑疾病与认知科学研究中心<br>生物医学工程学院"
+    # <br>为回车指令
+    detail: "讲师"
+
+  - year: "2020/01-2024/12"
+    school_major: "深圳大学心理学院"
+    detail: "副教授，博士生导师"
+
+  - year: "2024/12-至今"
+    school_major: "深圳大学心理学院"
+    detail: "教授，博士生导师"
+
+# 主持和参与的科研项目
+project:
+  - year: "2022-2025"
+    project_name: "汉语儿童阅读脑网络的形成机制"
+    detail: "国自然科学基金面上项目，主持"
+  
+  - year: "2018-2020"
+    project_name: "中文阅读障碍的多模态脑网络机制及甄别研究"
+    detail: "国家自然科学基金青年项目，主持"
+
+  - year: "2023-2027"
+    project_name: "我国失语症患者语料库建设及其语言能力评估研究"
+    detail: "国家社科基金重大项目，子课题负责人"
+
+  - year: "2022-2025"
+    project_name: "人脑中汉语语义信息解码的关键技术研究"
+    detail: "深圳市优秀青年项目，主持"
+  

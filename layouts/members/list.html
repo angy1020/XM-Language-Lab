@@ -1,0 +1,76 @@
+{{ define "main" }}
+<div class="container mx-auto px-4 py-12" style="max-width: 1250px;">
+  
+  <div class="mb-10 text-left" style="margin-bottom: 40px;">
+    <h1 class="text-3xl font-bold text-gray-900 flex items-center gap-3">
+      <span style="width: 4px; height: 28px; background-color: #09568c; display: inline-block; border-radius: 2px;"></span>
+      团队成员 (Team Members)
+    </h1>
+  </div>
+
+  {{ range .Site.Data.members }}
+  <div class="mb-12">
+      
+      <div class="flex items-center space-x-2 mb-6 border-b border-gray-100 pb-3">
+          <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+          </svg>
+          <h2 class="text-2xl font-bold" style="color: #09568c;">{{ .group_title }}</h2>
+          <span class="text-gray-400 text-sm font-normal">({{ len .members }}人)</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          {{ range .members }}
+          <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-5 flex items-start space-x-4 hover:shadow-md transition-shadow duration-200">
+              
+              {{ $hasPhoto := false }}
+              {{ if .photo }}
+                {{ $img := resources.Get .photo }}
+                {{ if $img }}
+                  {{ $hasPhoto = true }}
+                  {{ $avatar := $img.Fill "128x128 webp q80" }}
+                  <div class="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
+                      <img src="{{ $avatar.RelPermalink }}" alt="{{ .name }}" class="w-full h-full object-cover">
+                  </div>
+                {{ end }}
+              {{ end }}
+
+              {{ if not $hasPhoto }}
+                  <div class="w-24 h-24 rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-lg" style="background-color: #09568c;">
+                      {{ substr .name 0 3 }}
+                  </div>
+              {{ end }}
+
+              <div class="flex-1 min-w-0">
+                  <h3 class="text-lg font-bold text-gray-800 mb-0.5 truncate">{{ .name }}</h3>
+                  
+                  <p class="text-xs text-gray-400 mb-1.5 truncate">
+                      {{ .title }} <span class="text-gray-200 mx-1">•</span> {{ .year }}
+                  </p>
+                  
+                  {{ if .email }}
+                  <p class="text-xs text-gray-500 mb-3 flex items-center truncate" title="{{ .email }}">
+                      <svg class="w-3.5 h-3.5 mr-1.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: #09568c;">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                      </svg>
+                      <a href="mailto:{{ .email }}" class="hover:underline truncate">{{ .email }}</a>
+                  </p>
+                  {{ end }}
+                  
+                  {{ if .tag }}
+                  <span class="inline-block bg-blue-50 text-blue-600 text-xs px-2.5 py-1 rounded-md font-medium">
+                      {{ .tag }}
+                  </span>
+                  {{ end }}
+              </div>
+
+          </div>
+          {{ end }}
+
+      </div>
+  </div>
+  {{ end }}
+
+</div>
+{{ end }}

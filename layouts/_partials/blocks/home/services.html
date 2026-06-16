@@ -1,0 +1,53 @@
+<!-- 板块分割线 -->
+<div style="max-width: 1800px; margin: 0 auto; padding: 0 20px;">
+  <hr style="border: 0; height: 1px; background: linear-gradient(to right, rgba(229, 231, 235, 0) 0%, rgba(229, 231, 235, 1) 15%, rgba(229, 231, 235, 1) 85%, rgba(229, 231, 235, 0) 100%);" />
+</div>
+
+<!-- 卡片 -->
+<section class="py-16">
+  <div class="container mx-auto px-4">
+    {{ with .title }}
+      <h1 class="text-primary mb-8 text-center text-3xl font-bold">{{ . }}</h1>
+    {{ end }}
+    {{ with .text }}
+      <p class="mx-auto mb-16 text-center text-black xl:max-w-[50%]">{{ . }}</p>
+    {{ end }}
+    {{ if .cards }}
+      <div class="grid gap-12 xl:grid-cols-3">
+        {{ range .cards }}
+          <div class="research-card rounded-4xl px-6 py-12 xl:px-12 xl:py-16"
+               style="border: 1px solid #e5e7eb; background: linear-gradient(180deg, #d3e2f5 0%, #f8fafc 40%, #ffffff 100%); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02); transition: all 0.3s ease;">
+            
+            {{ with .image }}
+              <div class="flex justify-center mb-6">
+                {{ partial "utilities/image" (dict "src" .) }}
+              </div>
+            {{ end }}
+            
+            <div class="flex flex-col items-center justify-center">
+              {{ with .title }}<h2 class="text-primary mb-4 text-center text-2xl">{{ . }}</h2>{{ end }}
+              {{ with .text }}<p class="mb-8 text-center text-black">{{ . }}</p>{{ end }}
+              {{ with .button }}
+                {{ partial "components/button/outline" (dict "label" .label "href" .link) }}
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    {{ end }}
+  </div>
+</section>
+
+<style>
+  /* 基础状态下，我们在 inline-style 里加了 transition: all 0.3s ease; 确保过渡动画平滑 */
+  
+  /* 当鼠标悬停在卡片上时触发 */
+  .research-card:hover {
+    transform: translateY(-8px); /* 卡片向上平移 8 像素，产生浮起感 */
+    border-color: #09568c !important; /* 边框稍微加深，让轮廓更清晰 */
+    
+    /* 替换为层次更丰富的立体大阴影 (弥散阴影) */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+                0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+  }
+</style>

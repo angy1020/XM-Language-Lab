@@ -1,0 +1,72 @@
+{{ define "main" }}
+<div class="container mx-auto px-4 py-12" style="max-width: 1250px;">
+  
+  {{ $contactData := .Site.Data.contact }}
+
+  <div class="mb-10 text-left" style="margin-bottom: 40px;">
+    <h1 class="text-3xl font-bold text-gray-900 flex items-center gap-3">
+      <span style="width: 4px; height: 28px; background-color: #09568c; display: inline-block; border-radius: 2px;"></span>
+      {{ $contactData.title }} <span class="text-xl text-gray-400 font-normal ml-2">{{ $contactData.subtitle }}</span>
+    </h1>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-8 mb-12">
+    {{ range $contactData.info_cards }}
+    <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm flex flex-col transition-all duration-300 hover:shadow-md">
+      <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center gap-3">
+        <span class="p-2 rounded-lg bg-blue-50 text-[#09568c] flex-shrink-0 flex items-center justify-center">
+          {{ if eq .icon "location" }}
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          {{ else if eq .icon "email" }}
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          {{ else if eq .icon "clock" }}
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          {{ end }}
+        </span>
+        {{ .title }}
+      </h3>
+      <div class="space-y-2 text-base text-gray-600 flex-grow leading-relaxed">
+        {{ range .details }}
+        <p>{{ . | markdownify }}</p>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+
+  <div class="mb-8 text-left">
+    <h2 class="text-2xl font-bold text-gray-900 flex items-center gap-3">
+      <span style="width: 4px; height: 22px; background-color: #09568c; display: inline-block; border-radius: 2px;"></span>
+      人才招聘与招生需求
+    </h2>
+  </div>
+
+  <div class="space-y-8">
+    {{ range $contactData.join_us }}
+    <div class="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm transition-all duration-300 hover:shadow-md">
+      
+      <div class="flex flex-wrap items-center gap-3 mb-4">
+        <h3 class="text-xl font-bold text-gray-900 tracking-tight">{{ .role }}</h3>
+        <span class="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-semibold bg-blue-50 text-[#09568c] border border-blue-100">
+          {{ .badge }}
+        </span>
+      </div>
+
+      {{ with .highlight }}
+      <div class="mb-5 pl-4 border-l-4 border-[#09568c] bg-blue-50/40 py-3 pr-3 rounded-r-xl text-base font-medium text-gray-700 italic leading-relaxed">
+        {{ . }}
+      </div>
+      {{ end }}
+
+      <div class="space-y-3 text-gray-600 text-base leading-relaxed">
+        {{ range .paragraphs }}
+        <p>{{ . | markdownify }}</p>
+        {{ end }}
+      </div>
+
+    </div>
+    {{ end }}
+  </div>
+
+</div>
+{{ end }}

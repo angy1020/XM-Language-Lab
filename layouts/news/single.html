@@ -1,0 +1,70 @@
+{{ define "main" }}
+{{ $currentID := .File.Dir | path.Base }}
+{{ $data := index .Site.Data.news_details $currentID }}
+
+<div class="container mx-auto px-4 py-12" style="max-width: 850px;">
+    
+    {{ if not $data }}
+    <div class="bg-red-50 border border-red-200 text-red-700 p-4 rounded-lg mb-8 text-sm">
+        <p class="font-bold mb-2">🔍 XMLab 框架排错提示：数据读取失败！</p>
+        <p>1. 当前页面检测到的文件夹名字是：<span class="bg-white px-1.5 py-0.5 rounded border font-mono font-bold">{{ $currentID }}</span></p>
+        <p class="mt-1">2. 意味着系统正在尝试寻找：<span class="bg-white px-1.5 py-0.5 rounded border font-mono font-bold">data/news_details/{{ $currentID }}.yaml</span></p>
+        <p class="mt-2 text-gray-500">👉 请检查 data/news_details/ 目录下是否存在该文件，且里面内容格式正确。</p>
+    </div>
+    {{ end }}
+
+    <div class="mb-6 text-sm text-gray-500">
+        <a href="{{ "/news/" | relURL }}" class="hover:text-[#09568c] transition-colors">📂 课题组动态</a> 
+        <span class="mx-2 text-gray-300">/</span> 
+        <span class="text-gray-400">活动详情</span>
+    </div>
+
+    {{ with $data }}
+    
+    <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+        {{ .title }}
+    </h1>
+
+    <div class="border-b border-gray-100 pb-6 mb-8 flex items-center text-sm text-gray-400 font-medium">
+        <span>⏱️ 发布时间：{{ .date }}</span>
+        <span class="mx-3">•</span>
+        <span class="text-[#09568c] bg-blue-50 px-2 py-0.5 rounded text-xs font-semibold">🎉 课题组活动</span>
+    </div>
+
+    <div class="space-y-6">
+        {{ range .sections }}
+            {{ if eq .type "text" }}
+                <p class="text-base text-gray-700 leading-relaxed text-justify tracking-wide">
+                    {{ .content }}
+                </p>
+            {{ end }}
+
+            {{ if eq .type "image" }}
+                {{ $img := resources.Get .path }}
+                <div class="my-8 flex flex-col items-center">
+                    {{ if $img }}
+                        {{ $scaled := $img.Resize "800x webp q85" }}
+                        <div class="rounded-xl overflow-hidden shadow-sm border border-gray-100 max-w-full">
+                            <img src="{{ $scaled.RelPermalink }}" alt="{{ .caption }}" class="w-full h-auto object-cover max-h-[450px]">
+                        </div>
+                    {{ else }}
+                        <div class="bg-gray-50 text-gray-400 text-xs px-4 py-8 rounded-lg border border-dashed border-gray-200">📷 图片加载失败 (请检查路径：{{ .path }})</div>
+                    {{ end }}
+                    
+                    {{ if .caption }}
+                        <span class="text-xs text-gray-400 mt-2.5 font-medium tracking-wide">▲ {{ .caption }}</span>
+                    {{ end }}
+                </div>
+            {{ end }}
+        {{ end }}
+    </div>
+    {{ end }}
+
+    <div class="mt-16 pt-6 border-t border-gray-100 text-center">
+        <a href="{{ "/news/" | relURL }}" class="inline-flex items-center px-6 py-2.5 rounded-lg text-white font-medium shadow-sm hover:opacity-90 transition-opacity" style="background-color: #09568c;">
+            ← 返回动态列表
+        </a>
+    </div>
+
+</div>
+{{ end }}

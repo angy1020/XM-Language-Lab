@@ -1,0 +1,60 @@
+<nav class="">
+  <div class="container mx-auto flex items-center justify-between px-4 py-6">
+    <a class="flex items-center" href="{{ .Site.BaseURL }}">
+      {{ partial "utilities/image.html" (dict "src" "images/logo.png" "class" "h-12 w-auto") }}
+    </a>
+    <button
+      class="cursor-pointer xl:hidden"
+      type="button"
+      data-toggle-target="#navbarContent"
+      data-toggle-class="-translate-y-full"
+      aria-label="Toggle Navigation"
+    >
+      {{ partial "heroicons/bars-4" }}
+    </button>
+    <div
+      class="fixed inset-0 flex -translate-y-full flex-col items-center justify-center gap-8 bg-white duration-500 xl:relative xl:translate-y-0 xl:flex-row"
+      id="navbarContent"
+    >
+      <div class="container absolute top-0 mx-auto flex items-center justify-between px-4 py-6 xl:hidden">
+        <a class="flex items-center xl:hidden" href="{{ .Site.BaseURL }}">
+          {{ partial "utilities/image.html" (dict "src" "images/logo.png" "class" "h-12 w-auto") }}
+        </a>
+        <button
+          class="cursor-pointer xl:hidden"
+          type="button"
+          data-toggle-target="#navbarContent"
+          data-toggle-class="-translate-y-full"
+          aria-label="Toggle Navigation"
+        >
+          {{ partial "heroicons/x-mark" }}
+        </button>
+      </div>
+
+      <ul class="flex flex-col gap-8 xl:flex-row xl:items-center">
+        {{ $currentRelPermalink := .RelPermalink }}
+        
+        {{ range site.Menus.main }}
+          {{ $isActive := eq $currentRelPermalink .URL }}
+          
+          <li class="text-center flex items-center">
+            <a href="{{ .URL }}" 
+               class="px-4 py-2 font-medium rounded-lg transition-all duration-200 no-underline {{ if $isActive }} bg-blue-50 text-[#09568c] font-semibold {{ else }} text-gray-700 hover:bg-gray-50 hover:text-[#09568c] {{ end }}">
+              {{ .Name }}
+            </a>
+          </li>
+        {{ end }}
+
+        {{ range .Site.Menus.buttons }}
+          {{ $isActive := eq $currentRelPermalink .URL }}
+          <li class="text-center flex items-center">
+            <a href="{{ .URL }}" 
+               class="px-4 py-2 font-medium rounded-lg transition-all duration-200 no-underline {{ if $isActive }} bg-blue-50 text-[#09568c] font-semibold {{ else }} text-gray-700 hover:bg-gray-50 hover:text-[#09568c] {{ end }}">
+              {{ .Name }}
+            </a>
+          </li>
+        {{ end }}
+      </ul>
+      </div>
+  </div>
+</nav>

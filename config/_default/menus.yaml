@@ -1,46 +1,53 @@
 main:
-  - name: "Home"
-    url: "/#hero"
-    weight: 1
 
-  - name: "How we work"
-    url: "/#"
-    weight: 2
+- name: "首页"
+  url: "/"
+  weight: 1
 
-  - name: "Our team"
-    url: "/#"
-    weight: 3
+- name: "研究成果"
+  url: "/publications/"
+  weight: 2
 
-  - name: "Pricing"
-    url: "/#"
-    weight: 4
+- name: "PI"
+  url: "/pi/"
+  weight: 3
 
-  - name: "Blog"
-    url: "/blog"
-    weight: 5
+- name: "团队成员"
+  url: "/members/"
+  weight: 4
+
+- name: "最新动态"
+  url: "/news/"
+  weight: 5
 
 buttons:
-  - name: "Book a call"
-    url: "/#"
-    weight: 5
+
+- name: "联系我们"
+  url: "/contact/"
+  weight: 6
 
 footer:
-  - name: "Home"
-    url: "/#hero"
-    weight: 1
 
-  - name: "How we work"
-    url: "/#"
-    weight: 2
+- name: "首页"
+  url: "/"
+  weight: 1
 
-  - name: "Our team"
-    url: "/#"
-    weight: 3
+- name: "研究成果"
+  url: "/publications/"
+  weight: 2
 
-  - name: "Pricing"
-    url: "/#"
-    weight: 4
+- name: "PI"
+  url: "/pi/"
+  weight: 3
 
-  - name: "Blog"
-    url: "/blog"
-    weight: 5
+- name: "团队成员"
+  url: "/members/"
+  weight: 4
+
+- name: "最新动态"
+  url: "/news/"
+  weight: 5
+
+- name: "联系我们"
+  url: "/contact/"
+  weight: 6

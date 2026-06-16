@@ -1,8 +1,7 @@
-baseURL: "/"
+baseURL: "https://angy1020.github.io/XM-Language-Lab/"
 title: "XM Language Lab"
 summaryLength: 20
 
 # services:
 #   googleAnalytics:
 #     id: G-MEASUREMENT_ID
-

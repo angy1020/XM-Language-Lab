@@ -38,7 +38,7 @@
           {{ $isActive := eq $currentRelPermalink .URL }}
           
           <li class="text-center flex items-center">
-            <a href="{{ .URL }}" 
+            <a href="{{ .URL | relURL }}" 
                class="px-4 py-2 font-medium rounded-lg transition-all duration-200 no-underline {{ if $isActive }} bg-blue-50 text-[#09568c] font-semibold {{ else }} text-gray-700 hover:bg-gray-50 hover:text-[#09568c] {{ end }}">
               {{ .Name }}
             </a>
@@ -48,7 +48,7 @@
         {{ range .Site.Menus.buttons }}
           {{ $isActive := eq $currentRelPermalink .URL }}
           <li class="text-center flex items-center">
-            <a href="{{ .URL }}" 
+            <a href="{{ .URL | relURL }}" 
                class="px-4 py-2 font-medium rounded-lg transition-all duration-200 no-underline {{ if $isActive }} bg-blue-50 text-[#09568c] font-semibold {{ else }} text-gray-700 hover:bg-gray-50 hover:text-[#09568c] {{ end }}">
               {{ .Name }}
             </a>

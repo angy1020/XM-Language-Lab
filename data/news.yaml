@@ -22,8 +22,13 @@
   date: "2025年6月"
   title: "课题组论文被 NeuroImage 录用"
   summary: "徐敏教授（通讯）在 NeuroImage 上发表文章《Developmental changes in brain activation and functional connectivity during Chinese handwriting》。"
-  link: "2025-06-neuroimage-handwriting"
-  
+
+- category: "活动"
+  date: "2025年6月"
+  title: "深圳团建暨毕业生欢送会"
+  summary: "课题组全体成员欢聚一堂，为22级毕业生举办欢送活动，共度愉快时光。"
+  link: "20250614hongpa"
+
 - category: "成员"
   date: "2025年5月"
   title: "欢迎杨雨欣博士加入课题组开展博士后研究"
@@ -33,6 +38,12 @@
   date: "2025年5月"
   title: "课题组论文被 Neurobiology of Stress 录用"
   summary: "徐敏教授（通讯）和课题组硕士生王星朕同学（一作）在 Neurobiology of Stress 上发表文章《Sex-dependent impact of parental verbal abuse on brain lateralization of language》。"
+
+- category: "活动"
+  date: "2025年5月"
+  title: "2022级硕士毕业生合影留念"
+  summary: "课题组与22级硕士毕业生查文暄和王星朕同学合影留念，祝贺两位同学顺利毕业。"
+  link: "20250530biyezhao"
 
 - category: "论文"
   date: "2025年1月"
@@ -54,6 +65,18 @@
   title: "课题组论文被 NeuroImage 录用"
   summary: "徐敏副教授（通讯）与课题组硕士生侯泽琦同学（一作）在 NeuroImage 上发表文章《Differential neural representations of syntactic and semantic information across languages in Chinese-English bilinguals》。"
 
+- category: "活动"
+  date: "2024年11月"
+  title: "塘朗山徒步团建暨迎新活动"
+  summary: "课题组前往深圳塘朗山开展“勇于争先、乐于观察”主题徒步团建，欢迎新成员加入。"
+  link: "20241130tanglangshan"
+
+- category: "活动"
+  date: "2024年9月"
+  title: "教师节庆祝活动"
+  summary: "课题组在组会上为老师们庆祝教师节，献上鲜花与祝福。"
+  link: "20240911zuhuijiaoshijie"
+
 - category: "成员"
   date: "2024年8月"
   title: "欢迎谭玉菲博士加入课题组开展博士后研究"
@@ -63,6 +86,18 @@
   date: "2024年6月"
   title: "课题组论文被 Brain and Language 录用"
   summary: "徐敏副教授（通讯）在 Brain and Language 上发表文章《Brain representations of lexical ambiguity: Disentangling homonymy, polysemy, and their meanings》。"
+
+- category: "活动"
+  date: "2024年6月"
+  title: "巽寮湾团建暨毕业生欢送会"
+  summary: "课题组全体成员前往惠州巽寮湾开展团建活动，共同欢送2024届毕业生。"
+  link: "20240630xunliaowan"
+
+- category: "活动"
+  date: "2024年5月"
+  title: "2021级硕士毕业生合影留念"
+  summary: "课题组与21级硕士毕业生林慧格、陈芸、严冬甦和朱丽媛同学合影留念，祝贺四位同学顺利毕业。"
+  link: "20240529biyezhao"
 
 - category: "论文"
   date: "2024年4月"

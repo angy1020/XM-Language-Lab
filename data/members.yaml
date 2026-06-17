@@ -1,16 +1,34 @@
-- group_title: "在校成员"
+- group_title: "在校博士后"
   members:
+    - name: "谭玉菲"
+      year: "2024"
+      tag: ""
+      email: ""
+      photo: "members/tyf.jpg"
+
+    - name: "杨雨欣"
+      year: "2025"
+      tag: "句法加工，儿童语言习得"
+      email: ""
+      photo: "members/yyx.jpeg"
+
     - name: "肖慧敏"
       year: "2025"
       tag: "神经语言学，汉语二语习得"
       email: "3087136946@qq.com"
       photo: "members/xhm.jpg"
 
-    - name: "谭玉菲"
-      year: "2024"
-      tag: ""
-      photo: "members/tyf.jpg"
+- group_title: "出站博士后"
+  members:
+    - name: "郑苑仪"
+      year: "2022"
+      end_year: "2026"
+      tag: " (4)MEG/EEG (5)fMRI (1) 语言预测 (2) 感觉-运动整合及跨模态信息表征 (3) 自然情境神经影像研究"
+      email: "zhengyuanyi@szu.edu.cn"
+      photo: "members/zyy.jpeg"
 
+- group_title: "在校博士生"
+  members:
     - name: "霍超"
       year: "2022"
       tag: ""
@@ -20,46 +38,35 @@
     - name: "王展"
       year: "2023"
       tag: "汉字阅读"
+      email: ""
       photo: "members/wz.jpg"
 
-    - name: "黄水婷"
-      year: "2026"
-      tag: ""
-      photo: "members/hst.jpg"
-
+- group_title: "在校硕士生"
+  members:
     - name: "黎家宇"
       year: "2025"
       tag: "语言发展"
       email: "2500162002@mails.szu.edu.cn"
       photo: "members/ljy.jpg"
 
-    - name: "杨雨欣"
-      year: "2025"
-      tag: "句法加工，儿童语言习得"
-      photo: "members/yyx.jpeg"
-
-    - name: "黄倍清"
+    - name: "黄水婷"
       year: "2026"
-      tag: "自然言语理解的神经机制"
-      photo: "members/hbq.jpg"
+      tag: ""
+      email: ""
+      photo: "members/hst.jpg"
 
-    - name: "陈雅婷"
-      year: "2025"
-      tag: "阅读"
-      email: "3288553902@qq.com"
-      photo: "members/cyt.jpg"
-
-- group_title: "毕业成员"
+- group_title: "毕业硕士生"
   members:
-    - name: "郑苑仪"
-      year: "2022"
-      tag: "(1) 语言预测加工的神经机制 (2) 感觉-运动整合及跨模态信息表征 (3) 自然情境神经影像研究（MEG/EEG, fMRI）及多变量解码分析（RSA, MVPA） (4) 预测加工在复杂情境中的适应性作用"
-      email: "zhengyuanyi@szu.edu.cn"
-      photo: "members/zyy.jpeg"
+    - name: "黄倍清"
+      year: "2023"
+      tag: "自然言语理解的神经机制、大语言模型"
+      email: "BeiqingHuang102@gmail.com"
+      photo: "members/hbq.jpg"
 
     - name: "黄富纯"
       year: "2023"
       tag: "语言的认知神经机制"
+      email: ""
       photo: "members/hfc.jpg"
 
     - name: "侯文颖"
@@ -71,6 +78,7 @@
     - name: "王梦芸"
       year: "2023"
       tag: "语言的认知机制"
+      email: ""
       photo: "members/wmy.jpeg"
 
     - name: "查文暄"
@@ -82,6 +90,7 @@
     - name: "王星朕"
       year: "2022"
       tag: ""
+      email: ""
       photo: "members/wxz.jpg"
 
     - name: "林惠格"
@@ -93,21 +102,25 @@
     - name: "朱丽媛"
       year: "2021"
       tag: "句子理解，预期更新"
+      email: ""
       photo: "members/zly.jpg"
 
     - name: "严冬甦"
       year: "2021"
       tag: "儿童语言发展的神经机制"
+      email: ""
       photo: "members/yds.jpg"
 
     - name: "陈芸"
       year: "2021"
       tag: ""
+      email: ""
       photo: "members/cy.jpg"
 
     - name: "侯泽琦"
       year: "2020"
       tag: "双语，工作记忆"
+      email: ""
       photo: "members/hzq.jpeg"
 
     - name: "柏晶"
@@ -124,6 +137,35 @@
 
     - name: "欧健"
       year: "2016"
-      tag: "磁共振数据分析，二语习得"
+      tag: "磁共振数据分析、二语习得"
       email: "oujian2000@gmail.com"
       photo: "members/oj.jpg"
+
+- group_title: "研究助理"
+  members:
+    - name: "查文暄"
+      year: "2026"
+      tag: "语言预测"
+      email: "zhawx86@163.com"
+      photo: "members/cwx.jpg"
+
+    - name: "黄倍清"
+      year: "2026"
+      tag: "自然言语理解的神经机制、大语言模型"
+      email: "BeiqingHuang102@gmail.com"
+      photo: "members/hbq.jpg"
+
+    - name: "陈雅婷"
+      year: "2025"
+      end_year: "2026"
+      tag: "阅读"
+      email: "3288553902@qq.com"
+      photo: "members/cyt.jpg"
+
+- group_title: "副研究员"
+  members:
+    - name: "林正龙"
+      year: "2023"
+      tag: "fMRI、语言神经机制、神经调控技术"
+      email: "lin_zhenglong@hotmail.com"
+      title: "副研究员"

@@ -1,6 +1,5 @@
 # data/contact.yaml
 title: "联系与加入"
-subtitle: "Contact & Join Us"
 
 # 1. 顶部的联系渠道卡片
 info_cards:
@@ -14,7 +13,7 @@ info_cards:
   - title: "电子邮箱"
     icon: "email"
     details:
-      - "课题组 PI 邮箱：minxu@szu.edu.cn"
+      - "课题组 PI 邮箱：xumin@szu.edu.cn"
 
   - title: "工作时间"
     icon: "clock"

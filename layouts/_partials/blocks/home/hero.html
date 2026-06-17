@@ -1,35 +1,36 @@
-<section id="hero" class="relative w-full overflow-hidden bg-black/80 flex items-end pb-12 xl:pb-10" style="height: 700px;">
+<section id="hero" class="relative w-full overflow-hidden bg-black/80 flex items-end pb-6 xl:pb-10 h-auto aspect-[3/2] xl:aspect-auto xl:h-[700px]">
+  
   <div class="absolute inset-0 z-0">
     {{ if .image }}
       {{ partial "utilities/image" (dict "src" .image "class" "w-full h-full object-cover object-center opacity-90") }}
     {{ end }}
   </div>
 
-  <div class="container mx-auto relative z-10 px-4">
-    <div class="flex flex-col justify-center gap-6 max-w-4xl text-center xl:text-start">
+  <div class="container mx-auto relative z-10 px-4 pt-24 xl:pt-0">
+    <div class="flex flex-col justify-center gap-2 xl:gap-6 max-w-4xl text-center xl:text-start">
       
       {{ with .title }}
-        <h1 class="text-white title text-4xl font-bold xl:text-7xl leading-tight">
+        <h1 class="text-white title text-xl font-bold xl:text-7xl leading-tight">
           {{ . | markdownify }}
         </h1>
       {{ end }}
       
       {{ with .text }}
-        <p class="text-gray-200 text-lg xl:text-xl leading-relaxed max-w-2xl mx-auto xl:mx-0">
+        <p class="text-gray-200 text-xs xl:text-xl leading-relaxed max-w-2xl mx-auto xl:mx-0">
           {{ . | markdownify }}
         </p>
       {{ end }}
       
       {{ if .buttons }}
-        <div class="flex flex-col items-center gap-4 mt-4 sm:flex-row justify-center xl:justify-start xl:gap-8">
+        <div class="flex flex-col items-center gap-2 mt-2 sm:flex-row justify-center xl:justify-start xl:gap-8">
           {{ range $i, $e := .buttons }}
             {{ if (eq $i 0) }}
-              <a class="bg-primary hover:bg-primary/90 rounded px-8 py-2 text-white duration-500 min-w-[140px] text-center" href="{{ .url }}">
+              <a class="bg-primary hover:bg-primary/90 rounded px-6 py-1 xl:px-8 xl:py-2 text-white duration-500 min-w-[120px] xl:min-w-[140px] text-center text-xs xl:text-base" href="{{ .url }}">
                 {{ .label }}
               </a>
             {{ else }}
               <a
-                class="border-white/60 text-white hover:bg-white flex items-center justify-center gap-2 rounded border px-8 py-2 duration-500 hover:text-black min-w-[140px]"
+                class="border-white/60 text-white hover:bg-white flex items-center justify-center gap-2 rounded border px-6 py-1 xl:px-8 xl:py-2 duration-500 hover:text-black min-w-[120px] xl:min-w-[140px] text-xs xl:text-base"
                 href="{{ .url }}"
               >
                 {{ .label }}
@@ -46,24 +47,18 @@
 
 <section id="intro" style="padding: 60px 20px; background-color: #ffffff; text-align: center;">
   <div style="max-width: 1300px; margin: 0 auto;">
-    
     <h1 class="text-primary mb-8 text-center text-3xl font-bold">
       课题组简介
     </h1>
-    
-    <!-- <div style="width: 50px; height: 3px; background-color: #09568c; margin: 0 auto 30px auto;"></div> 标题下横线 -->
-    
-    <!-- <p style="color: #4b5563; font-size: 1.1rem; line-height: 1.8; text-align: justify; text-justify: inter-ideograph;"> -->
     <p style="color: #4b5563; font-size: 1.1rem; line-height: 1.8; text-align: justify; text-justify: inter-ideograph; text-indent: 2em;">
       本课题组隶属于深圳大学心理学院，致力于研究语言加工、语言发展及其障碍等认知神经机制研究。 课题组拥有完善的软硬件实验条件与浓厚的学术氛围，近年来在国际高水平期刊上发表多篇高质量学术论文。 欢迎优秀的本科生、研究生、博士生及博士后同学加入我们的团队！
     </p>
-    
   </div>
 </section>
 
 <style>
   #hero img {
     opacity: 1 !important;
-    filter: brightness(0.85) !important; /* 控制图片的明暗度，0.65代表原图65%的亮度。如果觉得黑了可以调大，觉得亮了可以调小 */
+    filter: brightness(0.85) !important;
   }
 </style>

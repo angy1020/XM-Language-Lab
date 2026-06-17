@@ -4,78 +4,164 @@
   <div class="mb-10 text-left" style="margin-bottom: 40px;">
     <h1 class="text-3xl font-bold text-gray-900 flex items-center gap-3">
       <span style="width: 4px; height: 28px; background-color: #09568c; display: inline-block; border-radius: 2px;"></span>
-      团队成员 (Team Members)
+      团队成员
     </h1>
   </div>
 
-  {{ range .Site.Data.members }}
-  {{ $isAlumni := eq .group_title "毕业成员" }}
-  <div class="mb-12">
-      
-      <div class="flex items-center space-x-2 mb-6 border-b border-gray-100 pb-3">
+  {{/* 新分组顺序及旧 group_title 映射 */}}
+  {{ $groupMap := dict 
+    "博士后" (slice "在校博士后" "出站博士后")
+    "博士" (slice "在校博士生" "毕业博士生")
+    "硕士" (slice "在校硕士生" "毕业硕士生")
+    "研究助理" (slice "研究助理")
+    "副研究员" (slice "副研究员")
+  }}
+  {{ $groupOrder := slice "副研究员" "博士后" "博士" "硕士" "研究助理" }}
+  
+  {{/* 初始化分组容器 */}}
+  {{ $groupedMembers := dict }}
+  {{ range $groupOrder }}
+    {{ $groupedMembers = merge $groupedMembers (dict . slice) }}
+  {{ end }}
+  
+  {{/* 按旧数据归类到新分组 */}}
+  {{ range $.Site.Data.members }}
+    {{ $groupData := . }}
+    {{ $oldGroupTitle := .group_title }}
+    {{ range $newGroup, $oldGroups := $groupMap }}
+      {{ if in $oldGroups $oldGroupTitle }}
+        {{ range $groupData.members }}
+          {{ $item := dict "data" . "oldGroup" $oldGroupTitle }}
+          {{ $existing := index $groupedMembers $newGroup }}
+          {{ $updated := $existing | append $item }}
+          {{ $groupedMembers = merge $groupedMembers (dict $newGroup $updated) }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  
+  {{/* 按固定顺序渲染 */}}
+  {{ range $groupOrder }}
+    {{ $currentGroup := . }}
+    {{ $members := index $groupedMembers $currentGroup }}
+    {{ $count := len $members }}
+    
+    {{ if gt $count 0 }}
+      <div class="mb-12">
+        <div class="flex items-center space-x-2 mb-6 border-b border-gray-100 pb-3">
           <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
           </svg>
-          <h2 class="text-2xl font-bold" style="color: #09568c;">{{ .group_title }}</h2>
-          <span class="text-gray-400 text-sm font-normal">({{ len .members }}人)</span>
-      </div>
+          <h2 class="text-2xl font-bold" style="color: #09568c;">{{ $currentGroup }}</h2>
+          <span class="text-gray-400 text-sm font-normal">({{ $count }}人)</span>
+        </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          
-          {{ range .members }}
-          <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-5 flex items-start space-x-4 hover:shadow-md transition-shadow duration-200 {{ if $isAlumni }}opacity-85{{ end }}">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {{ range $members }}
+            {{ $member := .data }}
+            {{ $oldGroup := .oldGroup }}
+            {{ $isAlumni := or (in $oldGroup "毕业") (in $oldGroup "出站") }}
+            {{ $isStudent := or (eq $currentGroup "博士") (eq $currentGroup "硕士") }}
+            
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-5 flex items-start space-x-4 hover:shadow-md transition-shadow duration-200 {{ if $isAlumni }}opacity-85{{ end }}">
               
               {{ $hasPhoto := false }}
-              {{ if .photo }}
-                {{ $img := resources.Get .photo }}
+              {{ if $member.photo }}
+                {{ $photoPath := printf "images/%s" $member.photo }}
+                {{ $img := resources.Get $photoPath }}
                 {{ if $img }}
                   {{ $hasPhoto = true }}
                   {{ $avatar := $img.Fill "128x128 webp q80" }}
                   <div class="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
-                      <img src="{{ $avatar.RelPermalink }}" alt="{{ .name }}" class="w-full h-full object-cover">
+                    <img src="{{ $avatar.RelPermalink }}" alt="{{ $member.name }}" class="w-full h-full object-cover">
                   </div>
                 {{ end }}
               {{ end }}
 
               {{ if not $hasPhoto }}
-                  <div class="w-24 h-24 rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-lg" style="background-color: #09568c;">
-                      {{ substr .name 0 3 }}
-                  </div>
+                <div class="w-24 h-24 rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-lg" style="background-color: #09568c;">
+                  {{ substr $member.name 0 3 }}
+                </div>
               {{ end }}
 
               <div class="flex-1 min-w-0">
-                  <div class="flex items-center gap-2 mb-0.5">
-                      <h3 class="text-lg font-bold text-gray-800 truncate">{{ .name }}</h3>
-                      {{ if $isAlumni }}
+                <div class="flex items-center gap-2 mb-0.5 flex-wrap">
+                  <h3 class="text-lg font-bold text-gray-800 truncate">{{ $member.name }}</h3>
+                  
+                  {{/* 状态标签：仅博士后/博士/硕士显示 */}}
+                  {{ if or (eq $currentGroup "博士后") (eq $currentGroup "博士") (eq $currentGroup "硕士") }}
+                    {{ if in $oldGroup "毕业" }}
                       <span class="text-xs px-1.5 py-0.5 rounded bg-gray-100 text-gray-500 font-medium">毕业</span>
+                    {{ else if in $oldGroup "出站" }}
+                      <span class="text-xs px-1.5 py-0.5 rounded bg-gray-100 text-gray-500 font-medium">出站</span>
+                    {{ else if in $oldGroup "在校" }}
+                      <span class="text-xs px-1.5 py-0.5 rounded bg-green-100 text-green-600 font-medium">在校</span>
+                    {{ end }}
+                  {{ end }}
+                  
+                  {{/* 职称标签（如副研究员） */}}
+                  {{ if $member.title }}
+                    <span class="text-xs px-1.5 py-0.5 rounded bg-purple-100 text-purple-600 font-medium">{{ $member.title }}</span>
+                  {{ end }}
+                </div>
+                
+                {{/* 年份显示：学生始终为 year级；非学生有 end_year 则 year-end_year，否则 year-至今 */}}
+                <p class="text-xs text-gray-400 mb-1.5 truncate">
+                  {{ if $isStudent }}
+                    {{ $member.year }}级
+                  {{ else }}
+                    {{ if $member.end_year }}
+                      {{ $member.year }}-{{ $member.end_year }}
+                    {{ else }}
+                      {{ $member.year }}-至今
+                    {{ end }}
+                  {{ end }}
+                </p>
+                
+                {{ if $member.email }}
+                <p class="text-xs text-gray-500 mb-3 flex items-center truncate" title="{{ $member.email }}">
+                  <svg class="w-3.5 h-3.5 mr-1.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: #09568c;">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                  </svg>
+                  <a href="mailto:{{ $member.email }}" class="hover:underline truncate">{{ $member.email }}</a>
+                </p>
+                {{ end }}
+                
+                {{/* 研究方向标签：支持逗号、顿号、数字序号拆分 */}}
+                {{ if $member.tag }}
+                  {{ $tagStr := $member.tag }}
+                  {{ $tags := slice }}
+                  
+                  {{ if findRE `\(\d+\)` $tagStr }}
+                    {{ $cleaned := replaceRE `\s*\(\d+\)\s*` "|||" $tagStr }}
+                    {{ $tags = split $cleaned "|||" }}
+                  {{ else }}
+                    {{ $tags = split $tagStr "，" }}
+                    {{ if eq (len $tags) 1 }}
+                      {{ $tags = split $tagStr "," }}
+                    {{ end }}
+                    {{ if eq (len $tags) 1 }}
+                      {{ $tags = split $tagStr "、" }}
+                    {{ end }}
+                  {{ end }}
+                  
+                  <div class="flex flex-wrap gap-1.5">
+                    {{ range $tags }}
+                      {{ $t := trim . " " }}
+                      {{ if $t }}
+                        <span class="inline-block bg-blue-50 text-blue-600 text-xs px-2.5 py-1 rounded-md font-medium">
+                          {{ $t }}
+                        </span>
                       {{ end }}
+                    {{ end }}
                   </div>
-                  
-                  <p class="text-xs text-gray-400 mb-1.5 truncate">
-                      {{ .year }}级
-                  </p>
-                  
-                  {{ if .email }}
-                  <p class="text-xs text-gray-500 mb-3 flex items-center truncate" title="{{ .email }}">
-                      <svg class="w-3.5 h-3.5 mr-1.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: #09568c;">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                      </svg>
-                      <a href="mailto:{{ .email }}" class="hover:underline truncate">{{ .email }}</a>
-                  </p>
-                  {{ end }}
-                  
-                  {{ if .tag }}
-                  <span class="inline-block bg-blue-50 text-blue-600 text-xs px-2.5 py-1 rounded-md font-medium">
-                      {{ .tag }}
-                  </span>
-                  {{ end }}
+                {{ end }}
               </div>
-
-          </div>
+            </div>
           {{ end }}
-
+        </div>
       </div>
-  </div>
+    {{ end }}
   {{ end }}
 
 </div>

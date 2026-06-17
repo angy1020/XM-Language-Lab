@@ -1,8 +1,13 @@
-<nav class="relative z-40">
-  <div class="container mx-auto flex items-center justify-between px-4 py-6">
+<<nav class="relative z-40">
+  <!-- 桌面端顶部栏：Logo 在左，菜单在右 -->
+  <div class="w-full flex items-center justify-between px-4 py-6">
+    
+    <!-- Logo -->
     <a class="flex items-center" href="{{ .Site.BaseURL }}">
-      {{ partial "utilities/image.html" (dict "src" "images/logo.png" "class" "h-32 w-auto") }}
+      {{ partial "utilities/image.html" (dict "src" "images/logo.png" "class" "h-14 xl:h-28 w-auto") }}
     </a>
+    
+    <!-- 移动端汉堡按钮 -->
     <button
       class="cursor-pointer xl:hidden"
       type="button"
@@ -13,16 +18,15 @@
       {{ partial "heroicons/bars-4" }}
     </button>
     
+    <!-- 导航菜单：桌面端相对定位横向排列，移动端全屏覆盖 -->
     <div
-      class="fixed inset-0 z-[999] flex -translate-y-full flex-col items-center justify-center gap-8 bg-white duration-500 xl:relative xl:translate-y-0 xl:flex-row"
+      class="fixed inset-0 z-[999] flex -translate-y-full flex-col items-center justify-center gap-8 bg-white duration-500 xl:relative xl:translate-y-0 xl:flex-row xl:bg-transparent"
       id="navbarContent"
     >
-      <div class="container absolute top-0 mx-auto flex items-center justify-between px-4 py-6 xl:hidden">
-        <a class="flex items-center xl:hidden" href="{{ .Site.BaseURL }}">
-          {{ partial "utilities/image.html" (dict "src" "images/logo.png" "class" "h-32 w-auto") }}
-        </a>
+      <!-- 移动端菜单顶部：Logo 居中，关闭按钮绝对定位右上角 -->
+      <div class="absolute top-0 left-0 right-0 flex items-center justify-center px-4 py-6 xl:hidden">
         <button
-          class="cursor-pointer xl:hidden"
+          class="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer"
           type="button"
           data-toggle-target="#navbarContent"
           data-toggle-class="-translate-y-full"
@@ -32,6 +36,7 @@
         </button>
       </div>
 
+      <!-- 菜单项 -->
       <ul class="flex flex-col gap-8 xl:flex-row xl:items-center">
         {{ $currentRelPermalink := .RelPermalink }}
         
@@ -56,6 +61,6 @@
           </li>
         {{ end }}
       </ul>
-      </div>
+    </div>
   </div>
 </nav>

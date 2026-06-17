@@ -1,0 +1,53 @@
+# data/home/carousel.yaml
+title: "焦点新闻"
+news_items:
+  - category: "学术交流"
+    color_class: "text-green-700 bg-green-50"
+    date: "2026年5月"
+    title: "热烈祝贺徐敏老师圆满结束为期一年的法国学术访学、顺利归国！"
+    image: "/images/news/news4.jpg"
+    text: ""
+    # read_more_url: "/news/visit-2026/" 没有可以不写
+
+  - category: "学术成果"
+    color_class: "text-blue-700 bg-blue-50" # 控制不同分类的标签颜色
+    date: "2025年8月"
+    title: "徐敏课题组于《NeuroImage》联合发文：绘制儿童中文书写脑网络发育的动态轨迹"
+    image: "/images/news/news1.jpg"
+    text: "书写是一项核心的语言与运动技能，对个体的认知发展、高效沟通以及学业成就具有重要贡献。
+          然而，支撑书写能力发展的脑系统机制目前仍不清楚。本研究利用功能磁共振成像（fMRI）技术，
+          考察了52名儿童（9–13岁）和40名青年人在中文书写过程中，大脑局部激活与功能网络连接的差异。"
+    # 如果是外部链接可以直接写，如果是内部链接配合 absURL 也会很安全
+    read_more_url: "https://www.sciencedirect.com/science/article/pii/S1053811925003337"
+
+  - category: "学术成果"
+    color_class: "text-blue-700 bg-blue-50"
+    date: "2025年5月"
+    title: "王星朕同学于《Neurobiology of Stress》发文：言语暴力如何重塑大脑？来自语言脑侧化研究的新证据"
+    image: "/images/news/news2.jpg"
+    text: "相比于身体虐待，父母的言语暴力（如辱骂、贬低、讽刺）更隐蔽，但同样会重塑大脑中关乎语言的关键结构。
+          本研究旨在系统探究父母言语暴力对男性和女性在语言相关的行为、大脑结构和功能侧化上的不同影响。
+          研究通过层级回归分析发现弓状束前段和额叶激活对父母言语暴力的易感性，并揭示了男女之间的不同模式。"
+    read_more_url: "https://www.sciencedirect.com/science/article/pii/S2352289525000244"
+
+  - category: "学术成果"
+    color_class: "text-blue-700 bg-blue-50"
+    date: "2025年1月"
+    title: "博士后郑苑仪老师最新Nature子刊成果：解码语言-运动皮层如何跨模态表征感觉与运动特征"
+    image: "/images/news/news3.jpg"
+    text: "言语加工涉及大脑中感觉系统与运动系统之间复杂的相互作用，这对于早期语言发育至关重要。
+      近期的研究已将这种感觉-运动交互扩展到了视觉词汇加工领域，强调了在识字习得（literacy acquisition）过程中阅读与书写之间的联系。
+      本研究利用功能磁共振成像（fMRI）结合表征相似性分析（RSA），展示了语言-运动区域在听觉和视觉知觉过程中，如何编码语言刺激的运动和感觉特征。"
+    read_more_url: "https://www.nature.com/articles/s42003-025-07466-5"
+
+
+# 其余几种新闻类型
+
+  # - category: "实验室动态"
+  #   color_class: "text-purple-700 bg-purple-50"
+  #   date: "2026年4月"
+  #   title: "课题组完成高性能计算集群部署，全力加速脑电与大模型融合科研"
+  #   link: "/news/setup-2026/"
+  #   image: "/images/hero-bg.jpg"
+  #   text: "为进一步提升脑电大数据处理能力及复杂神经机制的计算建模效率，课题组本月顺利完成了计算平台的扩容升级。新平台将全面支持基于 BGE-zh-v1.5 嵌入模型的深度语义特征提取和海量单试次表征相似性计算..."
+

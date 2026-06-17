@@ -1,90 +1,58 @@
-<!-- 板块分割线 -->
 <div style="max-width: 1800px; margin: 0 auto; padding: 0 20px;">
   <hr style="border: 0; height: 1px; background: linear-gradient(to right, rgba(229, 231, 235, 0) 0%, rgba(229, 231, 235, 1) 15%, rgba(229, 231, 235, 1) 85%, rgba(229, 231, 235, 0) 100%);" />
 </div>
 
-<!-- 卡片 -->
+{{ $data := site.Data.home.carousel }}
+
 <section class="py-12" style="background-color: #ffffff; padding-top: 40px; margin-top: 40px;">
   <div class="container mx-auto px-4" style="max-width: 1500px;">
     
     <div class="mb-8 text-center md:text-left">
       <h1 class="text-primary mb-8 text-center text-3xl font-bold">
-      焦点新闻
+        {{ $data.title | default "焦点新闻" }}
       </h1>
     </div>
 
     <div class="carousel-container" style="padding: 40px;">
       
-      <div class="carousel-item active">
+      {{ range $index, $item := $data.news_items }}
+      <div class="carousel-item {{ if eq $index 0 }}active{{ end }}">
         <div class="grid md:grid-cols-12 gap-12 items-center">
-          <div class="md:col-span-4 overflow-hidden rounded-xl border border-gray-100 shadow-sm">
-            <img src="/images/hero-image.png" alt="新闻图片 1" class="w-full h-80 object-cover hover:scale-105 transition-transform duration-500" />
+          
+          <div class="md:col-span-4 overflow-hidden rounded-xl border border-gray-100 shadow-sm aspect-[3/2] bg-gray-50 flex items-center justify-center">
+            {{ $imageResource := resources.Get $item.image }}
+            {{ if $imageResource }}
+              <img src="{{ $imageResource.Permalink }}" alt="新闻图片" class="mx-auto h-full object-contain hover:scale-105 transition-transform duration-500" style="max-width: 100%;" />
+            {{ else }}
+              <img src="{{ $item.image | absURL }}" alt="新闻图片" class="mx-auto h-full object-contain hover:scale-105 transition-transform duration-500" style="max-width: 100%;" />
+            {{ end }}
           </div>
+          
           <div class="md:col-span-8 flex flex-col justify-between h-full py-2">
             <div>
-              <span class="text-sm font-semibold text-blue-700 bg-blue-50 px-3 py-1 rounded-full">学术成果</span>
-              <span class="text-sm text-gray-400 ml-4">2026年6月</span>
+              <span class="text-sm font-semibold px-3 py-1 rounded-full {{ $item.color_class }}">{{ $item.category }}</span>
+              <span class="text-sm text-gray-400 ml-4">{{ $item.date }}</span>
+              
               <h3 class="text-2xl font-bold text-gray-900 mt-4 mb-3 hover:text-blue-800 transition-colors">
-                <a href="{{ `/news/paper-2026/` | relURL }}" class="no-underline text-gray-900">祝贺课题组关于....的研究成果被国际顶级期刊接收</a>
+                {{ if $item.read_more_url }}
+                  <a href="{{ $item.read_more_url | absURL }}" class="no-underline text-gray-900">{{ $item.title }}</a>
+                {{ else }}
+                  <span class="text-gray-900">{{ $item.title }}</span>
+                {{ end }}
               </h3>
-              <p class="text-gray-600 text-justify leading-relaxed">
-                本研究运用.......................(文章简介)
-              </p>
+              <p class="text-gray-600 text-justify leading-relaxed">{{ $item.text }}</p>
             </div>
-            <!-- 文章链接 -->
-            <a href="https://www.sciencedirect.com/science/article/pii/S1053811925003337" class="mt-6 text-blue-700 font-semibold flex items-center gap-1 hover:text-blue-900 no-underline">
-              阅读全文 <span>→</span>
-            </a>
+            
+            {{ if $item.read_more_url }}
+              <a href="{{ $item.read_more_url | absURL }}" class="mt-6 text-blue-700 font-semibold flex items-center gap-1 hover:text-blue-900 no-underline w-fit">
+                阅读全文 <span>→</span>
+              </a>
+            {{ end }}
           </div>
+
         </div>
       </div>
-
-      <div class="carousel-item">
-        <div class="grid md:grid-cols-12 gap-12 items-center">
-          <div class="md:col-span-4 overflow-hidden rounded-xl border border-gray-100 shadow-sm">
-            <img src="/images/hero-bg.jpg" alt="新闻图片 2" class="w-full h-80 object-cover hover:scale-105 transition-transform duration-500" />
-          </div>
-          <div class="md:col-span-8 flex flex-col justify-between h-full py-2">
-            <div>
-              <span class="text-sm font-semibold text-green-700 bg-green-50 px-3 py-1 rounded-full">学术交流</span>
-              <span class="text-sm text-gray-400 ml-4">2026年5月</span>
-              <h3 class="text-2xl font-bold text-gray-900 mt-4 mb-3">
-                <a href="{{ `/news/visit-2026/` | relURL }}" class="no-underline text-gray-900">国内外知名认知神经科学专家莅临课题组进行学术讲座与交流</a>
-              </h3>
-              <p class="text-gray-600 text-justify leading-relaxed">
-                应课题组负责人邀请，多位学者近日访问了实验室。专家们参观了我们的 63 通道脑电采集平台，并与在读硕博研究生就大语言模型隐藏层特征与人类脑电表征相似性分析（RSA）的融合路线进行了深入讨论...
-              </p>
-            </div>
-            <a href="{{ `/news/visit-2026/` | relURL }}" class="mt-6 text-blue-700 font-semibold flex items-center gap-1 hover:text-blue-900 no-underline">
-              阅读全文 <span>→</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="carousel-item">
-        <div class="grid md:grid-cols-12 gap-12 items-center">
-          <div class="md:col-span-4 overflow-hidden rounded-xl border border-gray-100 shadow-sm">
-            <img src="/images/hero-bg.jpg" alt="新闻图片 3" class="w-full h-80 object-cover hover:scale-105 transition-transform duration-500" />
-          </div>
-          <div class="md:col-span-8 flex flex-col justify-between h-full py-2">
-            <div>
-              <span class="text-sm font-semibold text-purple-700 bg-purple-50 px-3 py-1 rounded-full">实验室动态</span>
-              <span class="text-sm text-gray-400 ml-4">2026年4月</span>
-              <h3 class="text-2xl font-bold text-gray-900 mt-4 mb-3">
-                <a href="{{ `/news/setup-2026/` | relURL }}" class="no-underline text-gray-900">课题组完成高性能计算集群部署，全力加速脑电与大模型融合科研</a>
-              </h3>
-              <p class="text-gray-600 text-justify leading-relaxed">
-                为进一步提升脑电大数据处理能力及复杂神经机制的计算建模效率，课题组本月顺利完成了计算平台的扩容升级。新平台将全面支持基于 BGE-zh-v1.5 嵌入模型的深度语义特征提取和海量单试次表征相似性计算...
-              </p>
-            </div>
-            <a href="{{ `/news/setup-2026/` | relURL }}" class="mt-6 text-blue-700 font-semibold flex items-center gap-1 hover:text-blue-900 no-underline">
-              阅读全文 <span>→</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
+      {{ end }}
       <div class="carousel-indicators" id="carouselIndicators"></div>
 
     </div>
@@ -92,157 +60,67 @@
 </section>
 
 <style>
-  .carousel-container {
-    position: relative;
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.02), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
-  }
-
-  .carousel-item {
-    display: none;
-    animation: fadeEffect 0.6s ease-in-out;
-  }
-
-  .carousel-item.active {
-    display: block;
-  }
-
-  @keyframes fadeEffect {
-    from { opacity: 0; transform: scale(0.995); }
-    to { opacity: 1; transform: scale(1); }
-  }
-
-  .carousel-indicators {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 28px;
-  }
-
-  .dot {
-    cursor: pointer;
-    height: 8px;
-    width: 8px;
-    background-color: #cbd5e1;
-    border-radius: 50%;
-    display: inline-block;
-    transition: all 0.3s ease;
-  }
-
-  .dot.active, .dot:hover {
-    background-color: #09568c;
-    width: 24px;
-    border-radius: 4px;
-  }
+  .carousel-container { position: relative; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 16px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.02), 0 8px 10px -6px rgba(0, 0, 0, 0.02); }
+  .carousel-item { display: none; animation: fadeEffect 0.6s ease-in-out; }
+  .carousel-item.active { display: block; }
+  @keyframes fadeEffect { from { opacity: 0; transform: scale(0.995); } to { opacity: 1; transform: scale(1); } }
+  .carousel-indicators { display: flex; justify-content: center; gap: 8px; margin-top: 28px; }
+  .dot { cursor: pointer; height: 8px; width: 8px; background-color: #cbd5e1; border-radius: 50%; display: inline-block; transition: all 0.3s ease; }
+  .dot.active, .dot:hover { background-color: #09568c; width: 24px; border-radius: 4px; }
 </style>
 
 <script>
-  let slideIndex = 0;
+  let slideIndex = 0; 
   let timer = null;
 
-  // 核心优化：动态渲染指示器圆点。无论你加到几条新闻，它都会在前端自适应生成对应数量的圆点。
   function initIndicators() {
-    const slides = document.querySelectorAll('.carousel-item');
+    const slides = document.querySelectorAll('.carousel-item'); 
     const indicatorContainer = document.getElementById('carouselIndicators');
-    if (!indicatorContainer) return;
+    if (!indicatorContainer) return; 
     
-    indicatorContainer.innerHTML = ''; // 清空
+    indicatorContainer.innerHTML = ''; 
     slides.forEach((_, index) => {
-      const dot = document.createElement('span');
-      dot.className = `dot ${index === 0 ? 'active' : ''}`;
-      dot.onclick = () => currentSlide(index);
+      const dot = document.createElement('span'); 
+      dot.className = `dot ${index === 0 ? 'active' : ''}`; 
+      dot.onclick = () => currentSlide(index); 
       indicatorContainer.appendChild(dot);
     });
   }
 
   function showSlides() {
-    const slides = document.querySelectorAll('.carousel-item');
-    const dots = document.querySelectorAll('.dot');
-    
+    const slides = document.querySelectorAll('.carousel-item'); 
+    const dots = document.querySelectorAll('.dot'); 
     if (slides.length === 0) return;
-
-    slides.forEach(slide => slide.classList.remove('active'));
+    
+    slides.forEach(slide => slide.classList.remove('active')); 
     dots.forEach(dot => dot.classList.remove('active'));
-
-    slideIndex++;
+    
+    slideIndex++; 
     if (slideIndex > slides.length) { slideIndex = 1; }
-
-    slides[slideIndex - 1].classList.add('active');
+    
+    slides[slideIndex - 1].classList.add('active'); 
     if (dots[slideIndex - 1]) dots[slideIndex - 1].classList.add('active');
-
-    timer = setTimeout(showSlides, 6000); // 6秒轮播
+    
+    timer = setTimeout(showSlides, 6000); 
   }
 
   function currentSlide(index) {
-    clearTimeout(timer);
-    const slides = document.querySelectorAll('.carousel-item');
+    clearTimeout(timer); 
+    const slides = document.querySelectorAll('.carousel-item'); 
     const dots = document.querySelectorAll('.dot');
     
-    slides.forEach(slide => slide.classList.remove('active'));
+    slides.forEach(slide => slide.classList.remove('active')); 
     dots.forEach(dot => dot.classList.remove('active'));
-
-    slideIndex = index + 1;
-    slides[index].classList.add('active');
+    
+    slideIndex = index + 1; 
+    slides[index].classList.add('active'); 
     if (dots[index]) dots[index].classList.add('active');
-
+    
     timer = setTimeout(showSlides, 6000);
   }
 
-  document.addEventListener("DOMContentLoaded", function() {
-    initIndicators(); // 先初始化圆点数量
-    setTimeout(showSlides, 200); // 再启动轮播
+  document.addEventListener("DOMContentLoaded", function() { 
+    initIndicators(); 
+    setTimeout(showSlides, 200); 
   });
 </script>
-
-<!-- 各类新闻模板 -->
- <!-- <div class="carousel-item">
-        <div class="grid md:grid-cols-12 gap-12 items-center">
-          <div class="md:col-span-4 overflow-hidden rounded-xl border border-gray-100 shadow-sm">
-            <img src="/images/hero-bg.jpg" alt="新闻图片 2" class="w-full h-80 object-cover hover:scale-105 transition-transform duration-500" />
-          </div>
-          <div class="md:col-span-8 flex flex-col justify-between h-full py-2">
-            <div>
-              <span class="text-sm font-semibold text-green-700 bg-green-50 px-3 py-1 rounded-full">学术交流</span>
-              <span class="text-sm text-gray-400 ml-4">2026年5月</span>
-              <h3 class="text-2xl font-bold text-gray-900 mt-4 mb-3">
-                <a href="{{ `/news/visit-2026/` | relURL }}" class="no-underline text-gray-900">国内外知名认知神经科学专家莅临课题组进行学术讲座与交流</a>
-              </h3>
-              <p class="text-gray-600 text-justify leading-relaxed">
-                应课题组负责人邀请，多位学者近日访问了实验室。专家们参观了我们的 63 通道脑电采集平台，并与在读硕博研究生就大语言模型隐藏层特征与人类脑电表征相似性分析（RSA）的融合路线进行了深入讨论...
-              </p>
-            </div>
-            <!!-- 如果没有可以删除 
-            <a href="{{ `/news/visit-2026/` | relURL }}" class="mt-6 text-blue-700 font-semibold flex items-center gap-1 hover:text-blue-900 no-underline">
-              阅读全文 <span>→</span>
-            </a>
-            --!!>
-          </div>
-        </div>
-      </div>
-
-      <div class="carousel-item">
-        <div class="grid md:grid-cols-12 gap-12 items-center">
-          <div class="md:col-span-4 overflow-hidden rounded-xl border border-gray-100 shadow-sm">
-            <img src="/images/hero-bg.jpg" alt="新闻图片 3" class="w-full h-80 object-cover hover:scale-105 transition-transform duration-500" />
-          </div>
-          <div class="md:col-span-8 flex flex-col justify-between h-full py-2">
-            <div>
-              <span class="text-sm font-semibold text-purple-700 bg-purple-50 px-3 py-1 rounded-full">实验室动态</span>
-              <span class="text-sm text-gray-400 ml-4">2026年4月</span>
-              <h3 class="text-2xl font-bold text-gray-900 mt-4 mb-3">
-                <a href="{{ `/news/setup-2026/` | relURL }}" class="no-underline text-gray-900">课题组完成高性能计算集群部署，全力加速脑电与大模型融合科研</a>
-              </h3>
-              <p class="text-gray-600 text-justify leading-relaxed">
-                为进一步提升脑电大数据处理能力及复杂神经机制的计算建模效率，课题组本月顺利完成了计算平台的扩容升级。新平台将全面支持基于 BGE-zh-v1.5 嵌入模型的深度语义特征提取和海量单试次表征相似性计算...
-              </p>
-            </div>
-            <!!-- 如果没有可以删除 
-            <a href="{{ `/news/setup-2026/` | relURL }}" class="mt-6 text-blue-700 font-semibold flex items-center gap-1 hover:text-blue-900 no-underline">
-              阅读全文 <span>→</span>
-            </a>
-            --!!>
-          </div>
-        </div>
-      </div> -->

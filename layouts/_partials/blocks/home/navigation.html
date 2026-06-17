@@ -1,79 +1,42 @@
-<!-- 板块分割线 -->
 <div style="max-width: 1800px; margin: 0 auto; padding: 0 20px;">
   <hr style="border: 0; height: 1px; background: linear-gradient(to right, rgba(229, 231, 235, 0) 0%, rgba(229, 231, 235, 1) 15%, rgba(229, 231, 235, 1) 85%, rgba(229, 231, 235, 0) 100%);" />
 </div>
 
-<!-- 卡片 -->
+{{ $data := site.Data.home.navigation }}
+
 <section class="py-12" style="padding-top: 100px;">
-     <h1 class="text-primary mb-8 text-center text-3xl font-bold">
-      快速导航
-    </h1>
+  <h1 class="text-primary mb-8 text-center text-3xl font-bold">
+    {{ $data.title | default "快速导航" }}
+  </h1>
   <div class="container mx-auto px-4" style="max-width: 1500px;">
     
     <div class="grid gap-10 md:grid-cols-2">
+      {{ range $data.cards }}
       
-      <a href="{{ `/publications/` | relURL }}" class="nav-shortcut-card">
+      <a href="{{ .link | absURL }}" class="nav-shortcut-card">
         <div class="nav-card-inner">
+          
           <div class="nav-icon-wrapper">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:24px; height:24px;">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="{{ .icon_path }}" />
             </svg>
           </div>
+          
           <div class="nav-text-wrapper">
-            <h3 class="nav-card-title">研究成果 <span class="arrow">→</span></h3>
-            <p class="nav-card-text">课题组在国际顶级期刊和会议上发表了多篇高水平论文，涵盖人工智能、语言认知与脑电数据处理等前沿领域。</p>
+            <h3 class="nav-card-title">{{ .title }} <span class="arrow">→</span></h3>
+            <p class="nav-card-text">{{ .text }}</p>
           </div>
+          
         </div>
       </a>
-
-      <a href="{{ `/pi/` | relURL }}" class="nav-shortcut-card">
-        <div class="nav-card-inner">
-          <div class="nav-icon-wrapper">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:24px; height:24px;">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-            </svg>
-          </div>
-          <div class="nav-text-wrapper">
-            <h3 class="nav-card-title">课题组负责人 <span class="arrow">→</span></h3>
-            <p class="nav-card-text">了解课题组负责人的学术履历、研究方向、学术兼职以及教学科研成果。</p>
-          </div>
-        </div>
-      </a>
-
-      <a href="{{ `/members/` | relURL }}" class="nav-shortcut-card">
-        <div class="nav-card-inner">
-          <div class="nav-icon-wrapper">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:24px; height:24px;">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
-            </svg>
-          </div>
-          <div class="nav-text-wrapper">
-            <h3 class="nav-card-title">团队成员 <span class="arrow">→</span></h3>
-            <p class="nav-card-text">我们拥有一支充满活力的研究团队，包括博士后、博士研究生、硕士研究生以及优秀本科实习生。</p>
-          </div>
-        </div>
-      </a>
-
-      <a href="{{ `/news/` | relURL }}" class="nav-shortcut-card">
-        <div class="nav-card-inner">
-          <div class="nav-icon-wrapper">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:24px; height:24px;">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125H9.75M10.5 4.5H5.625c-.621 0-1.125.504-1.125 1.125v13.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25M10.5 4.5V3a.75.75 0 0 0-.75-.75H8.25A.75.75 0 0 0 7.5 3v1.5M10.5 4.5h7.5c.621 0 1.125.504 1.125 1.125v3.375c0 .621-.504 1.125-1.125 1.125h-7.5V4.5Z" />
-            </svg>
-          </div>
-          <div class="nav-text-wrapper">
-            <h3 class="nav-card-title">最新动态 <span class="arrow">→</span></h3>
-            <p class="nav-card-text">了解课题组的最新学术见闻、学术交流活动、研究进展通报、获奖喜讯以及团队建设快讯。</p>
-          </div>
-        </div>
-      </a>
+      {{ end }}
 
     </div>
   </div>
 </section>
 
 <style>
-  /* 全局卡片基础状态（全为统一未激活的白底、淡色样式） */
+  /* 卡片基础白底状态 */
   .nav-shortcut-card {
     display: block;
     background-color: #ffffff;
@@ -85,14 +48,14 @@
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* 内部左图标、右文字的横向排版容器 */
+  /* 内部横向排版 */
   .nav-card-inner {
     display: flex;
     align-items: flex-start;
     gap: 20px;
   }
 
-  /* 左侧图标容器基础状态：清透淡蓝色底，中性深蓝图标 */
+  /* 图标清透蓝色底壳 */
   .nav-icon-wrapper {
     display: flex;
     align-items: center;
@@ -106,14 +69,14 @@
     transition: all 0.25s ease;
   }
 
-  /* 右侧文本整体排版：完全垂直排列，实现标题与正文彻底分行独立 */
+  /* 标题与正文上下彻底分行 */
   .nav-text-wrapper {
     display: flex;
     flex-direction: column;
     gap: 8px;
   }
 
-  /* 卡片标题基础状态 */
+  /* 卡片大标题 */
   .nav-card-title {
     font-size: 1.35rem;
     font-weight: 700;
@@ -124,7 +87,7 @@
     gap: 8px;
   }
   
-  /* 箭头基础状态：默认隐藏、带动画透明度，且带有一点向左缩进 */
+  /* 隐藏的小箭头 */
   .nav-card-title .arrow {
     font-weight: 500;
     opacity: 0;
@@ -132,7 +95,7 @@
     transition: all 0.25s ease;
   }
 
-  /* 卡片描述文本 */
+  /* 描述正文（两端对齐） */
   .nav-card-text {
     font-size: 0.98rem;
     color: #4b5563;
@@ -142,26 +105,26 @@
   }
 
   /* ========================================== */
-  /* 【核心交互】当鼠标 Hover 悬停在任何一个卡片上时 */
+  /* 【交互动效】鼠标悬停悬浮反馈 */
   /* ========================================== */
   .nav-shortcut-card:hover {
-    transform: translateY(-6px); /* 1. 产生立体浮动感 */
-    border-color: #09568c !important; /* 2. 边框外部颜色变深 */
+    transform: translateY(-6px); /* 1. 立体浮起 */
+    border-color: #09568c !important; /* 2. 边框变深 */
     
-    /* 3. 内阴影 1px 加上外层大弥散阴影，实现不发生位移形变的 2px 加粗效果 */
+    /* 3. 产生不发生位移扭曲的 2px 加粗触感 */
     box-shadow: 
       inset 0 0 0 1px #09568c,
       0 20px 25px -5px rgba(0, 0, 0, 0.07), 
       0 10px 10px -5px rgba(0, 0, 0, 0.03) !important;
   }
 
-  /* 4. 当卡片被 Hover 时，其内部的图标容器一律转换为反色（深蓝底、白图标） */
+  /* 4. 图标容器色彩反转（变成深蓝底、白图标） */
   .nav-shortcut-card:hover .nav-icon-wrapper {
     background-color: #09568c !important;
     color: #ffffff !important;
   }
 
-  /* 5. 当卡片被 Hover 时，对应的箭头丝滑显现并向右错动滑出 */
+  /* 5. 箭头显现并向右滑出 */
   .nav-shortcut-card:hover .arrow {
     opacity: 1;
     transform: translateX(0);

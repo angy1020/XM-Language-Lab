@@ -8,7 +8,7 @@ main:
   url: "/publications/"
   weight: 2
 
-- name: "PI"
+- name: "课题组负责人"
   url: "/pi/"
   weight: 3
 
@@ -19,8 +19,6 @@ main:
 - name: "最新动态"
   url: "/news/"
   weight: 5
-
-buttons:
 
 - name: "联系我们"
   url: "/contact/"
@@ -36,7 +34,7 @@ footer:
   url: "/publications/"
   weight: 2
 
-- name: "PI"
+- name: "课题组负责人"
   url: "/pi/"
   weight: 3
 

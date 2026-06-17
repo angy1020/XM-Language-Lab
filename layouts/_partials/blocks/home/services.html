@@ -1,9 +1,7 @@
-<!-- 板块分割线 -->
 <div style="max-width: 1800px; margin: 0 auto; padding: 0 20px;">
   <hr style="border: 0; height: 1px; background: linear-gradient(to right, rgba(229, 231, 235, 0) 0%, rgba(229, 231, 235, 1) 15%, rgba(229, 231, 235, 1) 85%, rgba(229, 231, 235, 0) 100%);" />
 </div>
 
-<!-- 卡片 -->
 <section class="py-16">
   <div class="container mx-auto px-4">
     {{ with .title }}
@@ -13,24 +11,28 @@
       <p class="mx-auto mb-16 text-center text-black xl:max-w-[50%]">{{ . }}</p>
     {{ end }}
     {{ if .cards }}
-      <div class="grid gap-12 xl:grid-cols-3">
+      <div class="grid gap-12 xl:grid-cols-3 justify-items-center">
         {{ range .cards }}
-          <div class="research-card rounded-4xl px-6 py-12 xl:px-12 xl:py-16"
-               style="border: 1px solid #e5e7eb; background: linear-gradient(180deg, #d3e2f5 0%, #f8fafc 40%, #ffffff 100%); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02); transition: all 0.3s ease;">
+          <div class="research-card rounded-4xl px-6 py-12 xl:px-12 xl:py-16 flex flex-col items-center"
+               style="border: 1px solid #e5e7eb; background: linear-gradient(180deg, #d3e2f5 0%, #f8fafc 40%, #ffffff 100%); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02); transition: all 0.3s ease; max-width: 580px; width: 100%;">
             
             {{ with .image }}
-              <div class="flex justify-center mb-6">
+              <div class="w-full mb-6 overflow-hidden rounded-2xl img-window aspect-[4/5]">
                 {{ partial "utilities/image" (dict "src" .) }}
               </div>
             {{ end }}
             
-            <div class="flex flex-col items-center justify-center">
-              {{ with .title }}<h2 class="text-primary mb-4 text-center text-2xl">{{ . }}</h2>{{ end }}
-              {{ with .text }}<p class="mb-8 text-center text-black">{{ . }}</p>{{ end }}
-              {{ with .button }}
-                {{ partial "components/button/outline" (dict "label" .label "href" .link) }}
-              {{ end }}
+            <div class="flex flex-col items-center justify-center mb-6">
+              {{ with .title }}<h2 class="text-primary mb-4 text-center text-2xl font-bold">{{ . }}</h2>{{ end }}
+              {{ with .text }}<p class="text-center text-sm text-gray-600 leading-relaxed">{{ . }}</p>{{ end }}
             </div>
+
+            {{ with .button }}
+              <div class="flex justify-center mt-auto w-full">
+                {{ partial "components/button/outline" (dict "label" .label "href" .link) }}
+              </div>
+            {{ end }}
+
           </div>
         {{ end }}
       </div>
@@ -39,14 +41,24 @@
 </section>
 
 <style>
-  /* 基础状态下，我们在 inline-style 里加了 transition: all 0.3s ease; 确保过渡动画平滑 */
-  
-  /* 当鼠标悬停在卡片上时触发 */
+  /* 🔧 核心黑魔法：强制图片完美贴合、铺满整个窗口 */
+  .img-window img,
+  .img-window picture,
+  .img-window svg {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    /* 🌟 cover 属性会让图片等比例放大并充满整个容器，多余的部分自动裁切，绝对不留白、不拉伸变形 */
+    object-fit: cover !important; 
+    /* 如果希望图片在窗口里居中对齐裁剪，可以加上下面这行 */
+    object-position: center !important; 
+  }
+
+  /* 鼠标悬停动效 */
   .research-card:hover {
-    transform: translateY(-8px); /* 卡片向上平移 8 像素，产生浮起感 */
-    border-color: #09568c !important; /* 边框稍微加深，让轮廓更清晰 */
-    
-    /* 替换为层次更丰富的立体大阴影 (弥散阴影) */
+    transform: translateY(-8px); 
+    border-color: #09568c !important; 
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
                 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
   }

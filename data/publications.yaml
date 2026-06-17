@@ -18,152 +18,127 @@
 #   type: "book" # 书籍
 
 # ...时间线：上（新）→下（旧） ...
-- title: "Deep Learning for Natural Language Processing: A Comprehensive Survey"
-  authors: "Zhang W., Li M., Wang H., Chen Y."
-  journal: "IEEE Transactions on Neural Networks and Learning Systems"
-  year: 2024
-  type: "journal" # 期刊
-
-- title: "Efficient Graph Neural Networks for Large-Scale Recommendation Systems"
-  authors: "Li M., Zhang W., Liu X."
-  journal: "NeurIPS 2024"
-  year: 2024
-  type: "conference" # 会议
-
-- title: "Cognitive Processing of Semantic Ambiguity: Neural Mechanisms and Models"
-  authors: "Wang H., Zhang W."
-  journal: "Academic Press (Elsevier)"
+- title: "Developmental changes in brain activation and functional connectivity during Chinese handwriting"
+  authors: "H Ren, J Li, Z Lin, Y Xu, HY Bi, M Xu, Y Yang"
+  journal: "NeuroImage"
   year: 2025
-  type: "book" # 书籍
+  type: "journal"
 
-- title: "Deep Learning for Natural Language Processing: A Comprehensive Survey"
-  authors: "Zhang W., Li M., Wang H., Chen Y."
-  journal: "IEEE Transactions on Neural Networks and Learning Systems"
-  year: 2024
-  type: "journal" # 期刊
-  
-- title: "Deep Learning for Natural Language Processing: A Comprehensive Survey"
-  authors: "Zhang W., Li M., Wang H., Chen Y."
-  journal: "IEEE Transactions on Neural Networks and Learning Systems"
-  year: 2024
-  type: "journal" # 期刊
+- title: "Sex-dependent impact of parental verbal abuse on brain lateralization of language"
+  authors: "X Wang, J Wang, Z Lin, Y Yang, M Xu"
+  journal: "Neurobiology of Stress"
+  year: 2025
+  type: "journal"
 
-- title: "Deep Learning for Natural Language Processing: A Comprehensive Survey"
-  authors: "Zhang W., Li M., Wang H., Chen Y."
-  journal: "IEEE Transactions on Neural Networks and Learning Systems"
+- title: "Neural representation of sensorimotor features in language-motor areas during auditory and visual perception"
+  authors: "Y Zheng, J Zhang, Y Yang, M Xu"
+  journal: "Communications Biology"
+  year: 2025
+  type: "journal"
+- title: "Syntactic development and its interplay with word processing and working memory in preschoolers’ brain: an fNIRS longitudinal study"
+  authors: "D Yan, T Fang, W He, M Xu"
+  journal: "NeuroImage"
+  year: 2025
+  type: "journal"
+
+- title: "Differential neural representations of syntactic and semantic information across languages in Chinese-English bilinguals"
+  authors: "Z Hou, H Li, L Gao, J Ou, M Xu"
+  journal: "NeuroImage"
   year: 2024
-  type: "journal" # 期刊
-  
-- title: "Deep Learning for Natural Language Processing: A Comprehensive Survey"
-  authors: "Zhang W., Li M., Wang H., Chen Y."
-  journal: "IEEE Transactions on Neural Networks and Learning Systems"
+  type: "journal"
+
+- title: "Brain representations of lexical ambiguity: Disentangling homonymy, polysemy, and their meanings"
+  authors: "X Liang, F Huang, D Liu, M Xu"
+  journal: "Brain and Language"
   year: 2024
-  type: "journal" # 期刊
-  
-- title: "Deep Learning for Natural Language Processing: A Comprehensive Survey"
-  authors: "Zhang W., Li M., Wang H., Chen Y."
-  journal: "IEEE Transactions on Neural Networks and Learning Systems"
+  type: "journal"
+
+- title: "Phonological properties of logographic words modulate brain activation in bilinguals: a comparative study of Chinese characters and Japanese Kanji"
+  authors: "Z Lin, X Li, G Qi, J Yang, H Sun, Q Guo, J Wu, M Xu"
+  journal: "Cerebral Cortex"
   year: 2024
-  type: "journal" # 期刊
-  
-- title: "Deep Learning for Natural Language Processing: A Comprehensive Survey"
-  authors: "Zhang W., Li M., Wang H., Chen Y."
-  journal: "IEEE Transactions on Neural Networks and Learning Systems"
+  type: "journal"
+
+- title: "Lateralized functional connectivity of the sensorimotor cortex and its variations during complex visuomotor tasks"
+  authors: "Y Yang, J Li, K Zhao, F Tam, SJ Graham, M Xu, K Zhou"
+  journal: "Journal of Neuroscience"
   year: 2024
-  type: "journal" # 期刊
-  
-- title: "Deep Learning for Natural Language Processing: A Comprehensive Survey"
-  authors: "Zhang W., Li M., Wang H., Chen Y."
-  journal: "IEEE Transactions on Neural Networks and Learning Systems"
-  year: 2024
-  type: "journal" # 期刊
-  
-- title: "Deep Learning for Natural Language Processing: A Comprehensive Survey"
-  authors: "Zhang W., Li M., Wang H., Chen Y."
-  journal: "IEEE Transactions on Neural Networks and Learning Systems"
-  year: 2024
-  type: "journal" # 期刊
-  
-- title: "Deep Learning for Natural Language Processing: A Comprehensive Survey"
-  authors: "Zhang W., Li M., Wang H., Chen Y."
-  journal: "IEEE Transactions on Neural Networks and Learning Systems"
-  year: 2024
-  type: "journal" # 期刊
-  
-- title: "Deep Learning for Natural Language Processing: A Comprehensive Survey"
-  authors: "Zhang W., Li M., Wang H., Chen Y."
-  journal: "IEEE Transactions on Neural Networks and Learning Systems"
-  year: 2024
-  type: "journal" # 期刊
-    
-- title: "Deep Learning for Natural Language Processing: A Comprehensive Survey"
-  authors: "Zhang W., Li M., Wang H., Chen Y."
-  journal: "IEEE Transactions on Neural Networks and Learning Systems"
-  year: 2024
-  type: "journal" # 期刊
-  
-- title: "Deep Learning for Natural Language Processing: A Comprehensive Survey"
-  authors: "Zhang W., Li M., Wang H., Chen Y."
-  journal: "IEEE Transactions on Neural Networks and Learning Systems"
-  year: 2024
-  type: "journal" # 期刊
-  
-- title: "Deep Learning for Natural Language Processing: A Comprehensive Survey"
-  authors: "Zhang W., Li M., Wang H., Chen Y."
-  journal: "IEEE Transactions on Neural Networks and Learning Systems"
-  year: 2024
-  type: "journal" # 期刊
-  
-- title: "Deep Learning for Natural Language Processing: A Comprehensive Survey"
-  authors: "Zhang W., Li M., Wang H., Chen Y."
-  journal: "IEEE Transactions on Neural Networks and Learning Systems"
-  year: 2024
-  type: "journal" # 期刊
-    
-- title: "Deep Learning for Natural Language Processing: A Comprehensive Survey"
-  authors: "Zhang W., Li M., Wang H., Chen Y."
-  journal: "IEEE Transactions on Neural Networks and Learning Systems"
-  year: 2024
-  type: "journal" # 期刊
-  
-- title: "Deep Learning for Natural Language Processing: A Comprehensive Survey"
-  authors: "Zhang W., Li M., Wang H., Chen Y."
-  journal: "IEEE Transactions on Neural Networks and Learning Systems"
-  year: 2024
-  type: "journal" # 期刊
-  
-- title: "Deep Learning for Natural Language Processing: A Comprehensive Survey"
-  authors: "Zhang W., Li M., Wang H., Chen Y."
-  journal: "IEEE Transactions on Neural Networks and Learning Systems"
-  year: 2024
-  type: "journal" # 期刊
-  
-- title: "Deep Learning for Natural Language Processing: A Comprehensive Survey"
-  authors: "Zhang W., Li M., Wang H., Chen Y."
-  journal: "IEEE Transactions on Neural Networks and Learning Systems"
-  year: 2024
-  type: "journal" # 期刊
-    
-- title: "Deep Learning for Natural Language Processing: A Comprehensive Survey"
-  authors: "Zhang W., Li M., Wang H., Chen Y."
-  journal: "IEEE Transactions on Neural Networks and Learning Systems"
-  year: 2024
-  type: "journal" # 期刊
-  
-- title: "Deep Learning for Natural Language Processing: A Comprehensive Survey"
-  authors: "Zhang W., Li M., Wang H., Chen Y."
-  journal: "IEEE Transactions on Neural Networks and Learning Systems"
-  year: 2024
-  type: "journal" # 期刊
-  
-- title: "Deep Learning for Natural Language Processing: A Comprehensive Survey"
-  authors: "Zhang W., Li M., Wang H., Chen Y."
-  journal: "IEEE Transactions on Neural Networks and Learning Systems"
-  year: 2024
-  type: "journal" # 期刊
-  
-- title: "Deep Learning for Natural Language Processing: A Comprehensive Survey"
-  authors: "Zhang W., Li M., Wang H., Chen Y."
-  journal: "IEEE Transactions on Neural Networks and Learning Systems"
-  year: 2024
-  type: "journal" # 期刊
+  type: "journal"
+
+- title: "Occupation-modulated language networks and its lateralization: A resting-state fMRI study of seafarers"
+  authors: "H Wu, D Peng, H Yan, Y Yang, M Xu, W Zeng, C Chang, N Wang"
+  journal: "Frontiers in Human Neuroscience"
+  year: 2023
+  type: "journal"
+
+- title: "心理语言学研究"
+  authors: "胡建华, 徐敏彭鹭鹭"
+  journal: "中国语言学年鉴"
+  year: 2023
+  type: "journal"
+
+- title: "Personality traits modulate the neural responses to handwriting processing"
+  authors: "Y Yang, J Li, J Zhang, K Zhou, HSR Kao, HY Bi, M Xu"
+  journal: "Annals of the New York Academy of Sciences"
+  year: 2022
+  type: "journal"
+
+- title: "Distinct spatiotemporal patterns of syntactic and semantic processing in human inferior frontal gyrus"
+  authors: "Yanming Zhu, Min Xu, Junfeng Lu, Jianhua Hu, Veronica PY Kwok, Yulong Zhou, Di Yuan, Bin Wu, Jie Zhang, Jinsong Wu, Li Hai Tan"
+  journal: "Nature Human Behaviour"
+  year: 2022
+  type: "journal"
+
+- title: "Dynamical Complexity Fingerprints of Occupation-Dependent Brain Functional Networks in Professional Seafarers"
+  authors: "H Yan, H Wu, Y Chen, Y Yang, M Xu, W Zeng, J Zhang, C Chang, N Wang"
+  journal: "Frontiers in neuroscience"
+  year: 2022
+  type: "journal"
+
+- title: "Disruption of Functional Brain Networks Underlies the Handwriting Deficit in Children With Developmental Dyslexia"
+  authors: "Z Liu, J Li, HY Bi, M Xu, Y Yang"
+  journal: "Frontiers in Neuroscience"
+  year: 2022
+  type: "journal"
+
+- title: "Neuroanatomical correlates of self-awareness of highly practiced visuomotor skills"
+  authors: "J Li, Z Lin, R Tao, M Xu, S Kong, HY Bi, Y Yang"
+  journal: "Brain Structure and Function"
+  year: 2021
+  type: "journal"
+
+- title: "The brain basis of handwriting deficits in Chinese children with developmental dyslexia"
+  authors: "Y Yang, Z Zuo, F Tam, SJ Graham, J Li, Y Ji, Z Meng, C Gu, HY Bi, J Ou, ..."
+  journal: "Developmental Science"
+  year: 2021
+  type: "journal"
+
+- title: "Brain decoding in multiple languages: Can cross-language brain decoding work?"
+  authors: "M Xu, D Li, P Li"
+  journal: "Brain and Language"
+  year: 2021
+  type: "journal"
+
+- title: "Calligraphy, psychology and the Confucian literati personality"
+  authors: "HSR Kao, M Xu, TT Kao"
+  journal: "Psychology and Developing Societies"
+  year: 2021
+  type: "journal"
+
+- title: "An audiovisual integration deficit underlies reading failure in nontransparent writing systems: An fMRI study of Chinese children with dyslexia"
+  authors: "Y Yang, YH Yang, J Li, M Xu, HY Bi"
+  journal: "Journal of Neurolinguistics"
+  year: 2020
+  type: "journal"
+
+- title: "Earlier second language acquisition is associated with greater neural pattern dissimilarity between the first and second languages"
+  authors: "J Ou, W Li, Y Yang, N Wang, M Xu"
+  journal: "Brain and Language"
+  year: 2020
+  type: "journal"
+
+- title: "Sex differences in functional brain networks for language"
+  authors: "M Xu, X Liang, J Ou, H Li, Y Luo, LH Tan"
+  journal: "Cerebral Cortex"
+  year: 2020
+  type: "journal"

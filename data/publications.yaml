@@ -3,6 +3,7 @@
 #   authors: "Zhang W., Li M., Wang H., Chen Y."
 #   journal: "IEEE Transactions on Neural Networks and Learning Systems"
 #   year: 2024
+#   link:最好是doi 
 #   type: "journal" # 期刊
 
 # - title: "Efficient Graph Neural Networks for Large-Scale Recommendation Systems"
@@ -18,127 +19,262 @@
 #   type: "book" # 书籍
 
 # ...时间线：上（新）→下（旧） ...
-- title: "Developmental changes in brain activation and functional connectivity during Chinese handwriting"
-  authors: "H Ren, J Li, Z Lin, Y Xu, HY Bi, M Xu, Y Yang"
-  journal: "NeuroImage"
+- title: Developmental changes in brain activation and functional connectivity during Chinese handwriting
+  authors: Huan Ren, Junjun Li, Zhenglong Lin, Yanzhi Xu, Hong-Yan Bi, Min Xu, Yang Yang
+  journal: NeuroImage
   year: 2025
+  link: https://doi.org/10.1016/j.neuroimage.2025.121330
   type: "journal"
 
-- title: "Sex-dependent impact of parental verbal abuse on brain lateralization of language"
-  authors: "X Wang, J Wang, Z Lin, Y Yang, M Xu"
-  journal: "Neurobiology of Stress"
+- title: Sex-dependent impact of parental verbal abuse on brain lateralization of language
+  authors: Xingzhen Wang, Jiaojian Wang, Zhenglong Lin, Yang Yang, Min Xu
+  journal: Neurobiology of Stress
   year: 2025
+  link: https://doi.org/10.1016/j.ynstr.2025.100730
   type: "journal"
 
-- title: "Neural representation of sensorimotor features in language-motor areas during auditory and visual perception"
-  authors: "Y Zheng, J Zhang, Y Yang, M Xu"
-  journal: "Communications Biology"
+- title: Neural representation of sensorimotor features in language-motor areas during auditory and visual perception
+  authors: Yuanyi Zheng, Jianfeng Zhang, Yang Yang, Min Xu
+  journal: Communications Biology
   year: 2025
+  link: https://doi.org/10.1038/s42003-025-07466-5
   type: "journal"
-- title: "Syntactic development and its interplay with word processing and working memory in preschoolers’ brain: an fNIRS longitudinal study"
-  authors: "D Yan, T Fang, W He, M Xu"
-  journal: "NeuroImage"
+
+- title: 'Syntactic development and its interplay with word processing and working memory in preschoolers’ brain: an fNIRS longitudinal study'
+  authors: Dongsu Yan, Tongfu Fang, Wei He, Min Xu
+  journal: NeuroImage
   year: 2025
+  link: https://doi.org/10.1016/j.neuroimage.2024.120987
   type: "journal"
 
-- title: "Differential neural representations of syntactic and semantic information across languages in Chinese-English bilinguals"
-  authors: "Z Hou, H Li, L Gao, J Ou, M Xu"
-  journal: "NeuroImage"
+- title: Differential neural representations of syntactic and semantic information across languages in Chinese-English bilinguals
+  authors: Zeqi Hou, Hehui Li, Lin Gao, Jian Ou, Min Xu
+  journal: NeuroImage
   year: 2024
+  link: https://doi.org/10.1016/j.neuroimage.2024.120928
   type: "journal"
 
-- title: "Brain representations of lexical ambiguity: Disentangling homonymy, polysemy, and their meanings"
-  authors: "X Liang, F Huang, D Liu, M Xu"
-  journal: "Brain and Language"
+- title: 'Brain representations of lexical ambiguity: Disentangling homonymy, polysemy, and their meanings'
+  authors: Xinyuan Liang, Fuchun Huang, Danqing Liu, Min Xu
+  journal: Brain and Language
   year: 2024
+  link: https://doi.org/10.1016/j.bandl.2024.105426
   type: "journal"
 
-- title: "Phonological properties of logographic words modulate brain activation in bilinguals: a comparative study of Chinese characters and Japanese Kanji"
-  authors: "Z Lin, X Li, G Qi, J Yang, H Sun, Q Guo, J Wu, M Xu"
-  journal: "Cerebral Cortex"
+- title: 'Phonological properties of logographic words modulate brain activation in bilinguals: a comparative study of Chinese characters and Japanese Kanji'
+  authors: Zhenglong Lin, Xiujun Li, Geqi Qi, Jiajia Yang, Hongzan Sun, Qiyong Guo, Jinglong Wu, Min Xu
+  journal: Cerebral Cortex
   year: 2024
+  link: https://doi.org/10.1093/cercor/bhae150
   type: "journal"
 
-- title: "Lateralized functional connectivity of the sensorimotor cortex and its variations during complex visuomotor tasks"
-  authors: "Y Yang, J Li, K Zhao, F Tam, SJ Graham, M Xu, K Zhou"
-  journal: "Journal of Neuroscience"
+- title: Lateralized functional connectivity of the sensorimotor cortex and its variations during complex visuomotor tasks
+  authors: Yang Yang, Junjun Li, Kai Zhao, Fred Tam, Simon J Graham, Min Xu, Ke Zhou
+  journal: Journal of Neuroscience
   year: 2024
+  link: https://doi.org/10.1523/jneurosci.0723-23.2023
   type: "journal"
 
-- title: "Occupation-modulated language networks and its lateralization: A resting-state fMRI study of seafarers"
-  authors: "H Wu, D Peng, H Yan, Y Yang, M Xu, W Zeng, C Chang, N Wang"
-  journal: "Frontiers in Human Neuroscience"
+- title: 'Occupation-modulated language networks and its lateralization: A resting-state fMRI study of seafarers'
+  authors: Huijun Wu, Deyuan Peng, Hongjie Yan, Yang Yang, Min Xu, Weiming Zeng, Chunqi Chang, Nizhuan Wang
+  journal: Frontiers in Human Neuroscience
   year: 2023
+  link: https://doi.org/10.3389/fnhum.2023.1095413
   type: "journal"
 
-- title: "心理语言学研究"
-  authors: "胡建华, 徐敏，彭鹭鹭"
-  journal: "中国语言学年鉴"
+- title: 心理语言学研究
+  authors: 胡建华, 徐敏,彭鹭鹭
+  journal: 中国语言学年鉴2022
   year: 2023
-  type: "journal"
+  link: http://ling.cass.cn/ziyuan/jikannianjian/2022/202309/t20230912_5685071.html
+  type: "book"
 
-- title: "Personality traits modulate the neural responses to handwriting processing"
-  authors: "Y Yang, J Li, J Zhang, K Zhou, HSR Kao, HY Bi, M Xu"
-  journal: "Annals of the New York Academy of Sciences"
+- title: Personality traits modulate the neural responses to handwriting processing
+  authors: Yang Yang, Junjun Li, Jun Zhang, Ke Zhou, Henry SR Kao, Hong‐Yan Bi, Min Xu
+  journal: Annals of the New York Academy of Sciences
   year: 2022
+  link: https://doi.org/10.1111/nyas.14871
   type: "journal"
 
-- title: "Distinct spatiotemporal patterns of syntactic and semantic processing in human inferior frontal gyrus"
-  authors: "Yanming Zhu, Min Xu, Junfeng Lu, Jianhua Hu, Veronica PY Kwok, Yulong Zhou, Di Yuan, Bin Wu, Jie Zhang, Jinsong Wu, Li Hai Tan"
-  journal: "Nature Human Behaviour"
+- title: Distinct spatiotemporal patterns of syntactic and semantic processing in human inferior frontal gyrus
+  authors: Yanming Zhu, Min Xu, Junfeng Lu, Jianhua Hu, Veronica PY Kwok, Yulong Zhou, Di Yuan, Bin Wu, Jie Zhang, Jinsong Wu, Li Hai Tan
+  journal: Nature Human Behaviour
   year: 2022
+  link: https://doi.org/10.1038/s41562-022-01334-6
   type: "journal"
 
-- title: "Dynamical Complexity Fingerprints of Occupation-Dependent Brain Functional Networks in Professional Seafarers"
-  authors: "H Yan, H Wu, Y Chen, Y Yang, M Xu, W Zeng, J Zhang, C Chang, N Wang"
-  journal: "Frontiers in neuroscience"
+- title: Dynamical Complexity Fingerprints of Occupation-Dependent Brain Functional Networks in Professional Seafarers
+  authors: Hongjie Yan, Huijun Wu, Yanyan Chen, Yang Yang, Min Xu, Weiming Zeng, Jian Zhang, Chunqi Chang, Nizhuan Wang
+  journal: Frontiers in neuroscience
   year: 2022
+  link: https://doi.org/10.3389/fnins.2022.830808
   type: "journal"
 
-- title: "Disruption of Functional Brain Networks Underlies the Handwriting Deficit in Children With Developmental Dyslexia"
-  authors: "Z Liu, J Li, HY Bi, M Xu, Y Yang"
-  journal: "Frontiers in Neuroscience"
+- title: Disruption of Functional Brain Networks Underlies the Handwriting Deficit in Children With Developmental Dyslexia
+  authors: Zhengyan Liu, Junjun Li, Hong-Yan Bi, Min Xu, Yang Yang
+  journal: Frontiers in Neuroscience
   year: 2022
+  link: https://doi.org/10.3389/fnins.2022.919440
   type: "journal"
 
-- title: "Neuroanatomical correlates of self-awareness of highly practiced visuomotor skills"
-  authors: "J Li, Z Lin, R Tao, M Xu, S Kong, HY Bi, Y Yang"
-  journal: "Brain Structure and Function"
+- title: Neuroanatomical correlates of self-awareness of highly practiced visuomotor skills
+  authors: Junjun Li, Zhenglong Lin, Ran Tao, Min Xu, Shihong Kong, Hong-Yan Bi, Yang Yang
+  journal: Brain Structure and Function
   year: 2021
+  link: https://doi.org/10.1007/s00429-021-02328-2
   type: "journal"
 
-- title: "The brain basis of handwriting deficits in Chinese children with developmental dyslexia"
-  authors: "Y Yang, Z Zuo, F Tam, SJ Graham, J Li, Y Ji, Z Meng, C Gu, HY Bi, J Ou, ..."
-  journal: "Developmental Science"
+- title: The brain basis of handwriting deficits in Chinese children with developmental dyslexia
+  authors: Yang Yang, Zhentao Zuo, Fred Tam, Simon J Graham, Junjun Li, Yuzhu Ji, Zelong Meng, Chanyuan Gu, Hong‐Yan Bi, Jian Ou, Min Xu
+  journal: Developmental Science
   year: 2021
+  link: https://doi.org/10.1111/desc.13161
   type: "journal"
 
-- title: "Brain decoding in multiple languages: Can cross-language brain decoding work?"
-  authors: "M Xu, D Li, P Li"
-  journal: "Brain and Language"
+- title: 'Brain decoding in multiple languages: Can cross-language brain decoding work?'
+  authors: Min Xu, Duo Li, Ping Li
+  journal: Brain and Language
   year: 2021
+  link: https://doi.org/10.1016/j.bandl.2021.104922
   type: "journal"
 
-- title: "Calligraphy, psychology and the Confucian literati personality"
-  authors: "HSR Kao, M Xu, TT Kao"
-  journal: "Psychology and Developing Societies"
+- title: Calligraphy, psychology and the Confucian literati personality
+  authors: Henry SR Kao, Min Xu, Tin Tin Kao
+  journal: Psychology and Developing Societies
   year: 2021
+  link: https://doi.org/10.1177/0971333621990449
   type: "journal"
 
-- title: "An audiovisual integration deficit underlies reading failure in nontransparent writing systems: An fMRI study of Chinese children with dyslexia"
-  authors: "Y Yang, YH Yang, J Li, M Xu, HY Bi"
-  journal: "Journal of Neurolinguistics"
+- title: 'An audiovisual integration deficit underlies reading failure in nontransparent writing systems: An fMRI study of Chinese children with dyslexia'
+  authors: Yang Yang, Ying Hui Yang, Junjun Li, Min Xu, Hong-Yan Bi
+  journal: Journal of Neurolinguistics
   year: 2020
+  link: https://doi.org/10.1016/j.jneuroling.2019.100884
   type: "journal"
 
-- title: "Earlier second language acquisition is associated with greater neural pattern dissimilarity between the first and second languages"
-  authors: "J Ou, W Li, Y Yang, N Wang, M Xu"
-  journal: "Brain and Language"
+- title: Earlier second language acquisition is associated with greater neural pattern dissimilarity between the first and second languages
+  authors: Jian Ou, Wenlong Li, Yang Yang, Nizhuan Wang, Min Xu
+  journal: Brain and Language
   year: 2020
+  link: https://doi.org/10.1016/j.bandl.2019.104740
   type: "journal"
 
-- title: "Sex differences in functional brain networks for language"
-  authors: "M Xu, X Liang, J Ou, H Li, Y Luo, LH Tan"
-  journal: "Cerebral Cortex"
+- title: Sex differences in functional brain networks for language
+  authors: Min Xu, Xiuling Liang, Jian Ou, Hong Li, Yue-jia Luo, Li Hai Tan
+  journal: Cerebral Cortex
   year: 2020
+  link: https://doi.org/10.1093/cercor/bhz184
   type: "journal"
+
+- title: Reading development in the digital age
+  authors: L.H. Tan, M. Xu
+  journal: Human Behaviour and Brain
+  year: 2020
+  link: https://doi.org/10.37716/hbab.2020010402
+  type: "journal"
+
+- title: Cognitive Correlates of Reading Fluency in Chinese School-Aged Children
+  authors: Jing Bai, Wenlong Li, Yang Yang, Jianhui Wu, Wei He, Min Xu
+  journal: Frontiers in Psychology
+  year: 2020
+  link: https://doi.org/10.3389/fpsyg.2020.00903
+  type: "journal"
+
+- title: 'Occupational Neuroplasticity in the Human Brain: A Critical Review and Meta-Analysis of Neuroimaging Studies'
+  authors: Huijun Wu, Hongjie Yan, Yang Yang, Min Xu, Yuhu Shi, Weiming Zeng, Jiewei Li, Jian Zhang, Chunqi Chang, Nizhuan Wang
+  journal: Unknown Publication
+  year: 2020
+  link: https://doi.org/10.3389/fnhum.2020.00215
+  type: "journal"
+
+- title: 10 Developmental Dyslexia in Chinese
+  authors: Min Xu, Li Hai Tan, Charles Perfetti
+  journal: Developmental Dyslexia across Languages and Writing Systems
+  year: 2019
+  link: https://doi.org/10.1017/9781108553377.010
+  type: "journal"
+
+- title: Microstructural plasticity in the bilingual brain
+  authors: Daiyi Luo, Veronica PY Kwok, Qing Liu, Wenlong Li, Yang Yang, Ke Zhou, Min Xu, Jia-Hong Gao, Li Hai Tan
+  journal: Brain and Language
+  year: 2019
+  link: https://doi.org/10.1016/j.bandl.2019.104654
+  type: "journal"
+
+- title: 'Occupational functional plasticity revealed by brain entropy: A resting‐state fMRI study of seafarers'
+  authors: Nizhuan Wang, Huijun Wu, Min Xu, Yang Yang, Chunqi Chang, Weiming Zeng, Hongjie Yan
+  journal: Human brain mapping
+  year: 2018
+  link: https://doi.org/10.1002/hbm.24055
+  type: "journal"
+
+- title: Distinct distributed patterns of neural activity are associated with two languages in the bilingual brain
+  authors: Min Xu, Daniel Baldauf, Chun Qi Chang, Robert Desimone, Li Hai Tan
+  journal: Science Advances
+  year: 2017
+  link: https://doi.org/10.1126/sciadv.1603309
+  type: "journal"
+
+- title: Localizing Age-Related Changes in Brain Structure Using Voxel-Based Morphometry
+  authors: S.H. Mu, M. Xu, J. Duan, J. Zhang, L.H. Tan
+  journal: Neural Plasticity
+  year: 2017
+  link: https://doi.org/10.1155/2017/6303512
+  type: "journal"
+
+- title: 'Neural systems underlying emotional and non-emotional interference processing: An ALE meta-analysis of functional neuroimaging studies'
+  authors: Min Xu, Guiping Xu, Yang Yang
+  journal: Frontiers in behavioral neuroscience
+  year: 2016
+  link: https://doi.org/10.3389/fnbeh.2016.00220
+  type: "journal"
+
+- title: 'What to do if we have nothing to rely on: Late bilinguals process L2 grammatical features like L1 natives'
+  authors: Hao Yan, Yu Mei Zhang, Min Xu, Hong Yan Chen, Yong Hui Wang
+  journal: Journal of Neurolinguistics
+  year: 2016
+  link: https://doi.org/10.1016/j.jneuroling.2016.04.002
+  type: "journal"
+
+- title: Character Amnesia
+  authors: M. Xu
+  journal: Unknown Publication
+  year: 2016
+  link: https://doi.org/10.1163/2210-7363_ecll_com_000225
+  type: "journal"
+
+- title: 'Effective connectivity of brain regions related to visual word recognition: An fMRI study of C hinese reading'
+  authors: Min Xu, Tianfu Wang, Siping Chen, Peter T Fox, Li Hai Tan
+  journal: Human Brain Mapping
+  year: 2015
+  link: https://doi.org/10.1002/hbm.22792
+  type: "journal"
+
+- title: Atypical lateralization of phonological working memory in developmental dyslexia
+  authors: Min Xu, Jing Yang, Wai Ting Siok, Li Hai Tan
+  journal: Journal of Neurolinguistics
+  year: 2015
+  link: https://doi.org/10.1016/j.jneuroling.2014.07.004
+  type: "journal"
+
+- title: Effect of calligraphy training on hyperarousal symptoms for childhood survivors of the 2008 China earthquakes
+  authors: Z. Zhu, R. Wang, H.S. Kao, Y. Zong, Z. Liu, S. Tang, M. Xu, I.C. Liu, S.P. Lam
+  journal: Neuropsychiatric disease and treatment
+  year: 2014
+  link: https://doi.org/10.2147/ndt.s55016
+  type: "journal"
+
+- title: China’s language input system in the digital age affects children’s reading development
+  authors: Li Hai Tan, Min Xu, Chun Qi Chang, Wai Ting Siok
+  journal: Proceedings of the National Academy of Sciences
+  year: 2013
+  link: https://doi.org/10.1073/pnas.1213586110
+  type: "journal"
+
+- title: 'Cognitive-Neural Effects of Brush Writing of Chinese Characters: Cortical Excitation of Theta Rhythm'
+  authors: M. Xu, H.S.R. Kao, M.L. Zhang, S.P.W. Lam, W. Wang
+  journal: Evidence-Based Complementary and Alternative Medicine
+  year: 2013
+  link: https://doi.org/10.1155/2013/975190
+  type: "journal"
+

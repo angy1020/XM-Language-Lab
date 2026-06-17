@@ -7,25 +7,33 @@
       <span style="width: 4px; height: 28px; background-color: #09568c; display: inline-block; border-radius: 2px;"></span>
       学术出版物
     </h1>
-    </div>
+  </div>
     
   <div id="pub-list" class="space-y-6">
     {{ range .Site.Data.publications }}
-    <div class="pub-card group bg-white border border-gray-100 rounded-xl p-6 transition-all duration-300 hidden" 
+    <div class="pub-card group bg-white border border-gray-100 rounded-xl p-6 transition-all duration-300 hidden relative cursor-pointer hover:border-blue-200" 
         data-type="{{ .type }}"
          style="box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.01), 0 2px 4px -1px rgba(0, 0, 0, 0.01);">
-    <div class="flex justify-between items-start gap-4">
+      <div class="flex justify-between items-start gap-4">
         <div class="space-y-2">
-          <h3 class="text-lg font-bold text-gray-900 leading-snug group-hover:text-[#09568c] transition-colors duration-300 cursor-pointer">
-            {{ .title }}
+          
+          <h3 class="text-lg font-bold text-gray-900 leading-snug group-hover:text-[#09568c] transition-colors duration-300">
+            {{ if .link }}
+              <a href="{{ .link }}" target="_blank" rel="noopener" title="点击在新窗口打开文献" class="hover:underline after:absolute after:inset-0 after:z-10">
+                {{ .title }}
+              </a>
+            {{ else }}
+              {{ .title }}
+            {{ end }}
           </h3>
-          <p class="text-sm text-gray-500 font-medium">{{ .authors }}</p>
-          <p class="text-sm text-gray-400 font-normal italic">
+          
+          <p class="text-sm text-gray-500 font-medium relative z-20">{{ .authors }}</p>
+          <p class="text-sm text-gray-400 font-normal italic relative z-20">
             {{ .journal }}, {{ .year }}
           </p>
         </div>
 
-        <div class="flex-shrink-0">
+        <div class="flex-shrink-0 relative z-20">
           {{ if eq .type "journal" }}
             <span class="text-xs font-semibold px-2.5 py-1 rounded bg-blue-50 text-blue-600 border border-blue-100">期刊</span>
           {{ else if eq .type "conference" }}
@@ -53,17 +61,17 @@
 </button>
 
 <style>
+  /* 🌟 优化 5：增强了卡片整体悬浮时的微动动画质感 */
   .pub-card:hover {
-    border-color: #e5e7eb;
-    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.03), 0 8px 16px -6px rgba(0, 0, 0, 0.03) !important;
-    transform: translateY(-1px);
+    box-shadow: 0 20px 25px -5px rgba(9, 86, 140, 0.05), 0 10px 10px -5px rgba(9, 86, 140, 0.03) !important;
+    transform: translateY(-2px);
   }
 </style>
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     // ----------------- 1. 点击加载更多逻辑 -----------------
-    const itemsPerPage = 20; // 每次展示20条
+    const itemsPerPage = 20; 
     let currentShown = 0;
     const cards = Array.from(document.querySelectorAll('.pub-card'));
     const loadMoreBtn = document.getElementById('load-more-btn');
@@ -74,28 +82,23 @@
       nextBatch.forEach(card => card.classList.remove('hidden'));
       currentShown += nextBatch.length;
 
-      // 如果全部成果都显示完了，隐藏“显示更多”按钮
       if (currentShown >= cards.length) {
         loadMoreContainer.style.display = 'none';
       }
     }
 
-    // 初始加载前20条
     if (cards.length > 0) {
       showNextBatch();
     } else {
       loadMoreContainer.style.display = 'none';
     }
 
-    // 绑定点击事件
     loadMoreBtn.addEventListener('click', showNextBatch);
-
 
     // ----------------- 2. 侧边回到顶部逻辑 -----------------
     const backToTopBtn = document.getElementById('back-to-top');
 
     window.addEventListener('scroll', function() {
-      // 当页面向下滚动超过 400 像素时，淡入显示按钮
       if (window.scrollY > 400) {
         backToTopBtn.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
         backToTopBtn.classList.add('opacity-100', 'translate-y-0');
@@ -105,7 +108,6 @@
       }
     });
 
-    // 平滑滚动回顶部
     backToTopBtn.addEventListener('click', function() {
       window.scrollTo({
         top: 0,
